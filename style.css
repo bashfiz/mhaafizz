@@ -7,7 +7,7 @@
 /* General Body and Reset */
 body {
     margin: 0;
-    font-family: 'Poppins', sans-serif; /* DIUBAH: Teks biasa pakai Poppins */
+    font-family: 'Poppins', sans-serif;
     background-color: #f5f5f5;
     color: #333;
     overflow-x: hidden;
@@ -37,7 +37,6 @@ ul {
     z-index: 1000;
 }
 
-/* DIUBAH: Bagian Logo menggunakan font Fineday */
 .navbar .logo {
     font-family: 'Fineday', sans-serif;
     font-size: 32px;
@@ -56,16 +55,12 @@ ul {
     color: #555;
 }
 
-/* DITAMBAHKAN: GAYA UNTUK HERO SLIDER BARU */
-
-/* GANTI SEMUA GAYA SLIDER LAMA DENGAN INI */
-
-/* 1. Mengatur ukuran slider agar tidak terlalu besar */
+/* Hero Slider Styles */
 .hero-slider {
     position: relative;
     width: 100%;
-    aspect-ratio: 16 / 7; /* DIUBAH: Rasio lebih lebar, jadi lebih pendek */
-    max-height: 70vh; /* DIUBAH: Batas tinggi maksimum jadi 70% layar */
+    aspect-ratio: 16 / 7;
+    max-height: 70vh;
     overflow: hidden;
     background-color: #eee;
 }
@@ -76,13 +71,12 @@ ul {
     transition: transform 0.5s ease-in-out;
 }
 
-/* 2. Mengatur setiap slide untuk bisa menampung teks overlay */
 .slide {
     min-width: 100%;
     height: 100%;
     box-sizing: border-box;
-    position: relative; /* PENTING: Agar .slide-content bisa diposisikan di atasnya */
-    color: white; /* Warna teks default untuk konten di dalam slide */
+    position: relative;
+    color: white;
 }
 
 .slide img {
@@ -92,14 +86,12 @@ ul {
     display: block;
 }
 
-/* KODE PENGGANTI UNTUK TAMPILAN DESKTOP */
-
-/* Mengatur posisi blok tulisan secara keseluruhan */
+/* Konten Teks di atas Slider (Desktop) */
 .slide-content {
     position: absolute;
-    bottom: 60px; /* INI KUNCINYA: Posisi diatur 60px dari BAWAH, bukan 50% dari ATAS */
+    bottom: 60px;
     left: 50%;
-    transform: translateX(-50%); /* Hanya menengahkan horizontal */
+    transform: translateX(-50%);
     text-align: center;
     width: 90%;
     max-width: 600px;
@@ -107,21 +99,23 @@ ul {
     text-shadow: 0 2px 4px rgba(0,0,0,0.5);
 }
 
-/* Mengatur jarak judul */
 .slide-content h1 {
     font-size: 3em;
-    margin-bottom: 5px; /* Jarak ke paragraf dibuat sangat rapat */
+    margin-bottom: 5px;
     line-height: 1.2;
 }
 
-/* Mengatur jarak dan spasi paragraf */
 .slide-content p {
     font-size: 1.2em;
-    margin-bottom: 15px; /* Jarak ke tombol diperkecil */
-    line-height: 1.3; /* Spasi antar baris dibuat sangat rapat */
+    margin-bottom: 15px;
+    line-height: 1.3;
 }
 
-/* 4. DITAMBAHKAN KEMBALI: Gaya untuk tombol Discover Now */
+/* Sembunyikan paragraf mobile di desktop */
+.p-mobile {
+    display: none;
+}
+
 .discover-button {
     background-color: #fff;
     color: #333;
@@ -133,7 +127,7 @@ ul {
     cursor: pointer;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
     transition: all 0.3s ease;
-    text-shadow: none; /* Hapus bayangan teks khusus untuk tombol */
+    text-shadow: none;
 }
 
 .discover-button:hover {
@@ -142,8 +136,7 @@ ul {
     border-color: #fff;
 }
 
-
-/* Gaya untuk tombol navigasi dan titik-titik (Tetap sama) */
+/* Tombol Navigasi Slider */
 .slider-btn {
     position: absolute;
     top: 50%;
@@ -168,6 +161,7 @@ ul {
 .prev-btn { left: 20px; }
 .next-btn { right: 20px; }
 
+/* Indikator Titik Slider */
 .slider-dots {
     position: absolute;
     bottom: 20px;
@@ -191,46 +185,28 @@ ul {
 .dot:hover { transform: scale(1.2); }
 .dot.active { background-color: white; }
 
-.prev-btn {
-    left: 20px;
+/* Social Bar Section */
+.social-bar-section {
+    background-color: #333;
+    text-align: center;
+    padding: 12px 0;
+    margin-top: 20px;
 }
 
-.next-btn {
-    right: 20px;
+.social-bar-section a {
+    color: #fff;
+    font-size: 22px;
+    margin: 0 16px;
+    transition: transform 0.2s ease, color 0.2s ease;
+    display: inline-block;
 }
 
-/* Gaya untuk wadah indikator titik */
-.slider-dots {
-    position: absolute;
-    bottom: 20px;
-    left: 50%;
-    transform: translateX(-50%);
-    z-index: 10;
-    display: flex;
-    gap: 10px;
-}
-
-/* Gaya untuk setiap titik */
-.dot {
-    width: 12px;
-    height: 12px;
-    border-radius: 50%;
-    background-color: rgba(255, 255, 255, 0.5);
-    cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.3s ease;
-    border: 1px solid rgba(0,0,0,0.2);
-}
-
-.dot:hover {
+.social-bar-section a:hover {
     transform: scale(1.2);
+    color: #bbb;
 }
 
-/* Gaya untuk titik yang sedang aktif */
-.dot.active {
-    background-color: white;
-}
-
-/* Main Navigation (di bawah hero section) */
+/* Main Navigation (Menu Teks) */
 .main-navigation {
     background-color: #fff;
     padding: 20px 0;
@@ -259,29 +235,38 @@ ul {
 }
 
 /* Section Title (Hair to Toe) */
-/* Kode yang sudah diperbarui */
-
 .section-title {
-    text-align: left; /* DIUBAH: Teks jadi rata kiri */
+    text-align: left;
     padding: 40px 20px; 
 }
 
+/* Anda akan menemukan kode ini... */
 .section-title h2 {
-    font-size: 25px; /* DIUBAH: Ukuran font jadi 25px */
+    font-size: 25px;
     color: #333;
     margin: 0;
 }
 
-/* Footer Placeholder */
+/* --- TAMBAHKAN KODE BARU DI BAWAH INI --- */
+
+/* Gaya untuk Footer */
 .footer-placeholder {
-    text-align: center;
+    text-align: center; /* INI KUNCINYA: Membuat teks di dalamnya jadi ke tengah */
     padding: 50px 20px;
     background-color: #eee;
     color: #666;
     font-size: 0.9em;
 }
 
-/* Bottom Bar (Simulasi Bar Browser) */
+/* --- BATAS AKHIR KODE BARU --- */
+
+
+/* Di bawahnya akan ada kode untuk .bottom-bar */
+.bottom-bar {
+    /* ... isinya ... */
+}
+
+/* Bottom Bar (Simulasi Browser) */
 .bottom-bar {
     position: fixed;
     bottom: 0;
@@ -322,38 +307,52 @@ ul {
     opacity: 1;
 }
 
-/* Media Queries for Responsiveness (Basic) */
+/* ======================================= */
+/* MEDIA QUERIES (RESPONSIVE)         */
+/* ======================================= */
+
+@media (max-width: 1024px) {
+    /* Sembunyikan tombol panah slider di tablet & HP */
+    .slider-btn {
+        display: none;
+    }
+}
 
 @media (max-width: 768px) {
-    /* Aturan untuk membuat slider lebih tinggi di mobile */
+    /* Atur tinggi slider di mobile */
     .hero-slider {
         height: 60vh;
         aspect-ratio: unset;
     }
 
-/* Kode Baru (Perubahan untuk Tampilan Desktop) */
+    /* Atur posisi dan lebar konten slider di mobile */
+    .slide-content {
+        top: auto;
+        bottom: 45px;
+        transform: translateX(-50%);
+        width: 90%;
+    }
 
-/* Kode Baru (Posisi Teks Lebih Rendah di Desktop) */
+    /* Sembunyikan teks desktop, tampilkan teks mobile */
+    .p-desktop {
+        display: none;
+    }
+    .p-mobile {
+        display: block;
+    }
 
-/* Kode baru untuk media query 768px */
-.slide-content {
-    top: auto;
-    bottom: 45px; /* DIUBAH: Posisi diturunkan lagi lebih dekat ke titik */
-    transform: translateX(-50%);
-    width: 90%; /* DIUBAH: Diperlebar sedikit agar teks muat dalam 1 baris */
-}
-.slide-content h1 {
-    font-size: 3em;
-    /* DIUBAH: Jarak ke paragraf diperkecil */
-    margin-bottom: 8px; 
-    line-height: 1.2;
-}
+    /* Atur ukuran font konten slider di mobile */
+    .slide-content h1 {
+        font-size: 1.8em;
+        margin-bottom: 8px;
+    }
+    .slide-content p {
+        font-size: 0.8em;
+        line-height: 1.4;
+        margin-bottom: 22px;
+    }
 
-/* Kode baru untuk media query 480px */
-.slide-content p {
-    font-size: 0.7em; /* DIUBAH: Diperkecil sedikit lagi agar pas 2 baris */
-}
-    /* Aturan lain untuk mobile yang sudah ada sebelumnya */
+    /* Aturan responsif lain */
     .navbar .logo {
         font-size: 28px;
     }
@@ -363,111 +362,36 @@ ul {
         font-size: 18px;
     }
 
-    .discover-button {
-        padding: 10px 25px;
-        font-size: 1em;
-    }
-
     .main-navigation ul {
         flex-direction: column;
         gap: 10px;
     }
 
-    .main-navigation ul li a {
-        font-size: 0.9em;
-        padding: 5px;
-    }
-
     .section-title h2 {
-        font-size: 22px; /* Disesuaikan dari 2em */
+        font-size: 22px;
     }
 
     .bottom-bar {
         font-size: 12px;
         padding: 8px 15px;
     }
+}
 
-    .bottom-bar .browser-nav-buttons {
-        gap: 15px;
+@media (max-width: 480px) {
+    /* Atur ukuran font konten slider untuk HP terkecil */
+    .slide-content h1 {
+        font-size: 1.5em;
     }
-}
-
-@media (max-width: 480px) {/* DITAMBAHKAN: Sesuaikan ukuran font di slider untuk HP */
-.slide-content h1 {
-    font-size: 1.8em;
-}
-
-.slide-content p {
-    font-size: 0.9em;
-}
-    .navbar {
-        padding: 10px 15px;
+    .slide-content p {
+        font-size: 0.75em;
     }
-
+    
+    /* Aturan responsif lain */
     .navbar .logo {
-        font-size: 24px; /* Sesuaikan ukuran untuk mobile kecil */
-    }
-
-    .hero-section {
-        height: 60vh;
-    }
-
-    .hero-content h1 {
-        font-size: 1.8em;
-    }
-
-    .hero-content p {
-        font-size: 0.9em;
-    }
-
-    .discover-button {
-        padding: 8px 20px;
-        font-size: 0.9em;
-    }
-
-    .social-icons-hero {
-        font-size: 18px;
-        gap: 15px;
-    }
-
-    .main-navigation ul {
-        gap: 8px;
+        font-size: 24px;
     }
 
     .section-title h2 {
-        font-size: 1.8em;
-    }
-
-    .bottom-bar .browser-info {
-        font-size: 10px;
-        gap: 5px;
-    }
-}
-
-/* DITAMBAHKAN: Gaya untuk baris ikon sosial media di bawah hero */
-/* Kode yang sudah diperbarui */
-.social-bar-section {
-    background-color: #333;
-    text-align: center;
-    padding: 2px 0; /* DIUBAH: Bar dibuat lebih tipis */
-    margin-top: 15px; /* DIUBAH: Jarak dari slider di atasnya dikurangi setengah */
-}
-
-.social-bar-section a {
-    color: #fff; /* DIUBAH: Warna ikon jadi putih */
-    font-size: 22px;
-    margin: 0 16px;
-    transition: transform 0.2s ease, color 0.2s ease; /* Ditambah transisi warna */
-    display: inline-block;
-}
-
-.social-bar-section a:hover {
-    transform: scale(1.2);
-    color: #bbb; /* DIUBAH: Warna jadi abu-abu terang saat disentuh */
-}
-/* DITAMBAHKAN: Aturan untuk menyembunyikan tombol panah di perangkat mobile */
-@media (max-width: 1024px) {
-    .slider-btn {
-        display: none;
+        font-size: 20px;
     }
 }
