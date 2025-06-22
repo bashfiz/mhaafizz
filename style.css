@@ -318,7 +318,22 @@ ul {
 }
 
 /* Media Queries for Responsiveness (Basic) */
-@media (max-width: 768px) {
+
+@media (max-width: 768px) {/* DITAMBAHKAN: Sesuaikan ukuran font di slider untuk tablet */
+.slide-content h1 {
+    font-size: 2.2em;
+}
+
+.slide-content p {
+    font-size: 1em;
+}
+    /* DITAMBAHKAN: Aturan untuk membuat slider lebih tinggi di mobile */
+.hero-slider {
+    /* Mengatur tinggi slider menjadi 60% dari tinggi layar HP */
+    height: 60vh;
+    /* Membatalkan rasio aspek dari versi desktop agar tinggi ini berlaku */
+    aspect-ratio: unset;
+}
     .navbar .logo {
         font-size: 28px; /* Sesuaikan ukuran untuk mobile */
     }
@@ -369,7 +384,14 @@ ul {
     }
 }
 
-@media (max-width: 480px) {
+@media (max-width: 480px) {/* DITAMBAHKAN: Sesuaikan ukuran font di slider untuk HP */
+.slide-content h1 {
+    font-size: 1.8em;
+}
+
+.slide-content p {
+    font-size: 0.9em;
+}
     .navbar {
         padding: 10px 15px;
     }
@@ -434,4 +456,10 @@ ul {
 .social-bar-section a:hover {
     transform: scale(1.2);
     color: #bbb; /* DIUBAH: Warna jadi abu-abu terang saat disentuh */
+}
+/* DITAMBAHKAN: Aturan untuk menyembunyikan tombol panah di perangkat mobile */
+@media (max-width: 1024px) {
+    .slider-btn {
+        display: none;
+    }
 }
