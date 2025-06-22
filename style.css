@@ -103,24 +103,26 @@ ul {
 }
 
 .discover-button {
-    background-color: #fff; /* Latar belakang tombol jadi putih */
-    color: #333; /* Warna tulisan jadi hitam agar terbaca */
-    border: none; /* Hapus border agar lebih bersih */
-    border-radius: 5px; /* Sedikit lengkungan di sudut (opsional) */
-    padding: 12px 30px;
+    background-color: #fff;
+    color: #333;
+    /* DIUBAH: Menggunakan border transparan untuk mencegah tombol 'lompat' saat hover */
+    border: 2px solid transparent; 
+    border-radius: 5px;
+    padding: 10px 28px; /* Padding disesuaikan sedikit untuk border 2px */
     font-size: 1.1em;
-    font-weight: bold; /* Membuat tulisan sedikit tebal */
+    font-weight: bold;
     cursor: pointer;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15); /* Bayangan awal agar terlihat solid */
-    
-    /* INI KUNCI ANIMASI: membuat semua perubahan jadi halus */
-    transition: transform 0.2s ease-out, box-shadow 0.2s ease-out;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+    /* DIUBAH: Transisi diperbarui untuk semua perubahan */
+    transition: all 0.3s ease;
 }
 
 .discover-button:hover {
-    /* INI EFEK "NONJOL": Tombol bergerak ke atas dan bayangan membesar */
-    transform: translateY(-5px); /* Angkat tombol sedikit ke atas */
-    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2); /* Perbesar bayangan untuk efek melayang */
+    background-color: transparent; /* DIUBAH: Latar jadi transparan */
+    color: #fff; /* DIUBAH: Tulisan jadi putih */
+    border-color: #fff; /* DIUBAH: Border transparan kini jadi putih */
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
 }
 
 .social-icons-hero {
@@ -332,12 +334,13 @@ ul {
 
 /* DITAMBAHKAN: Gaya untuk baris ikon sosial media di bawah hero */
 .social-bar-section {
-    background-color: #333; /* DIUBAH: Latar belakang jadi abu-abu gelap */
+    display: block; /* DITAMBAHKAN: Memastikan elemen bersifat block */
+    width: 100%; /* DITAMBAHKAN: Lebar 100% secara eksplisit */
+    box-sizing: border-box; /* DITAMBAHKAN: Mencegah padding 'merusak' lebar */
+    background-color: #333;
     text-align: center;
-    padding: 20px 0; /* Jarak atas-bawah di dalam bar */
-    
-    /* DIUBAH: Menambahkan jarak dari konten di atasnya (sekitar 1cm) */
-    margin-top: 40px; 
+    padding: 20px 0;
+    margin-top: 40px;
 }
 
 .social-bar-section a {
