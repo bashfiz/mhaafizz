@@ -320,12 +320,13 @@ ul {
 /* Media Queries for Responsiveness (Basic) */
 
 @media (max-width: 768px) {/* DITAMBAHKAN: Sesuaikan ukuran font di slider untuk tablet */
+/* DIUBAH: Ukuran tulisan slider untuk tablet diperkecil lagi */
 .slide-content h1 {
-    font-size: 2.2em;
+    font-size: 1.8em;
 }
 
 .slide-content p {
-    font-size: 1em;
+    font-size: 0.9em;
 }
     /* DITAMBAHKAN: Aturan untuk membuat slider lebih tinggi di mobile */
 .hero-slider {
@@ -385,12 +386,13 @@ ul {
 }
 
 @media (max-width: 480px) {/* DITAMBAHKAN: Sesuaikan ukuran font di slider untuk HP */
+/* DIUBAH: Ukuran tulisan slider untuk HP diperkecil lagi */
 .slide-content h1 {
-    font-size: 1.8em;
+    font-size: 1.5em;
 }
 
 .slide-content p {
-    font-size: 0.9em;
+    font-size: 0.8em;
 }
     .navbar {
         padding: 10px 15px;
