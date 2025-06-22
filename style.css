@@ -1,15 +1,21 @@
+/* DITAMBAHKAN: Mengenalkan font Fineday ke browser */
+@font-face {
+  font-family: 'Fineday';
+  src: url('fonts/Fineday-StyleOne.ttf') format('truetype');
+}
+
 /* General Body and Reset */
 body {
     margin: 0;
-    font-family: Arial, sans-serif; /* Ganti dengan font yang mirip jika diinginkan */
-    background-color: #f5f5f5; /* Warna latar belakang umum */
+    font-family: 'Poppins', sans-serif; /* DIUBAH: Teks biasa pakai Poppins */
+    background-color: #f5f5f5;
     color: #333;
-    overflow-x: hidden; /* Mencegah scroll horizontal yang tidak diinginkan */
+    overflow-x: hidden;
 }
 
 a {
     text-decoration: none;
-    color: inherit; /* Menggunakan warna teks parent */
+    color: inherit;
 }
 
 ul {
@@ -24,17 +30,19 @@ ul {
     justify-content: space-between;
     align-items: center;
     padding: 15px 20px;
-    background-color: #fff; /* Warna latar belakang navbar */
+    background-color: #fff;
     box-shadow: 0 2px 5px rgba(0,0,0,0.1);
     position: sticky;
     top: 0;
     z-index: 1000;
 }
 
+/* DIUBAH: Bagian Logo menggunakan font Fineday */
 .navbar .logo {
-    font-size: 24px;
-    font-weight: bold;
-    color: #333; /* Warna teks logo */
+    font-family: 'Fineday', sans-serif;
+    font-size: 32px;
+    font-weight: normal;
+    color: #333;
 }
 
 .navbar .nav-icons {
@@ -52,20 +60,19 @@ ul {
 .hero-section {
     position: relative;
     width: 100%;
-    height: 70vh; /* Sesuaikan tinggi sesuai kebutuhan Anda */
+    height: 70vh;
     background-image: url('path/to/your/image.jpg'); /* GANTI DENGAN LOKASI GAMBAR ANDA */
     background-size: cover;
     background-position: center;
     display: flex;
     flex-direction: column;
-    justify-content: flex-end; /* Memposisikan konten di bagian bawah */
+    justify-content: flex-end;
     align-items: center;
     text-align: center;
-    color: #fff; /* Warna teks di atas gambar hero */
-    padding-bottom: 50px; /* Jarak dari bawah */
+    color: #fff;
+    padding-bottom: 50px;
 }
 
-/* Overlay transparan di atas gambar hero (opsional, untuk membuat teks lebih terbaca) */
 .hero-section::before {
     content: '';
     position: absolute;
@@ -73,7 +80,7 @@ ul {
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.3); /* Overlay hitam transparan */
+    background: rgba(0, 0, 0, 0.3);
     z-index: 1;
 }
 
@@ -116,7 +123,7 @@ ul {
     display: flex;
     gap: 20px;
     font-size: 24px;
-    margin-top: 20px; /* Jarak dari tombol discover */
+    margin-top: 20px;
 }
 
 .social-icons-hero a {
@@ -138,9 +145,9 @@ ul {
 
 .main-navigation ul {
     display: flex;
-    flex-wrap: wrap; /* Agar bisa wrap ke baris baru di layar kecil */
+    flex-wrap: wrap;
     justify-content: center;
-    gap: 15px; /* Jarak antar item */
+    gap: 15px;
 }
 
 .main-navigation ul li a {
@@ -183,14 +190,14 @@ ul {
     bottom: 0;
     left: 0;
     width: 100%;
-    background-color: #333; /* Warna gelap seperti bar browser */
+    background-color: #333;
     color: #fff;
     padding: 10px 20px;
     display: flex;
     justify-content: space-between;
     align-items: center;
     font-size: 14px;
-    z-index: 1001; /* Pastikan di atas elemen lain */
+    z-index: 1001;
 }
 
 .bottom-bar .browser-info {
@@ -200,7 +207,7 @@ ul {
 }
 
 .bottom-bar .browser-info i {
-    color: #4CAF50; /* Warna ikon gembok */
+    color: #4CAF50;
 }
 
 .bottom-bar .browser-nav-buttons {
@@ -220,7 +227,11 @@ ul {
 
 /* Media Queries for Responsiveness (Basic) */
 @media (max-width: 768px) {
-    .navbar .nav-icons {
+    .navbar .logo {
+        font-size: 28px; /* Sesuaikan ukuran untuk mobile */
+    }
+
+    .nav-icons {
         gap: 15px;
         font-size: 18px;
     }
@@ -243,7 +254,7 @@ ul {
     }
 
     .main-navigation ul {
-        flex-direction: column; /* Menu item jadi stack vertikal */
+        flex-direction: column;
         gap: 10px;
     }
 
@@ -272,7 +283,7 @@ ul {
     }
 
     .navbar .logo {
-        font-size: 20px;
+        font-size: 24px; /* Sesuaikan ukuran untuk mobile kecil */
     }
 
     .hero-section {
