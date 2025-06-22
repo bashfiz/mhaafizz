@@ -319,14 +319,27 @@ ul {
 
 /* Media Queries for Responsiveness (Basic) */
 
-@media (max-width: 768px) {/* DITAMBAHKAN: Sesuaikan ukuran font di slider untuk tablet */
-/* DIUBAH: Ukuran tulisan slider untuk tablet diperkecil lagi */
-.slide-content h1 {
-    font-size: 1.8em;
-}
+@media (max-width: 768px) {
+    /* ... aturan mobile lain yang sudah ada ... */
 
-.slide-content p {
-    font-size: 0.9em;
+    /* DITAMBAHKAN: Turunkan posisi teks di slider untuk mobile */
+    .slide-content {
+        top: auto;
+        bottom: 55px; 
+        transform: translateX(-50%);
+        width: 85%;
+    }
+
+    /* Aturan ukuran font yang sudah kita ubah sebelumnya */
+    .slide-content h1 {
+        font-size: 1.8em;
+    }
+
+    .slide-content p {
+        font-size: 0.9em;
+    }
+    
+    /* ... aturan mobile lain yang sudah ada ... */
 }
     /* DITAMBAHKAN: Aturan untuk membuat slider lebih tinggi di mobile */
 .hero-slider {
