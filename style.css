@@ -332,20 +332,23 @@ ul {
 
 /* DITAMBAHKAN: Gaya untuk baris ikon sosial media di bawah hero */
 .social-bar-section {
-    background-color: #fff; /* Latar belakang putih */
-    text-align: center; /* Ikon berada di tengah */
-    padding: 15px 0; /* Jarak atas-bawah agar barisnya tipis */
-    border-bottom: 1px solid #f0f0f0; /* Garis tipis pemisah di bawah */
+    background-color: #333; /* DIUBAH: Latar belakang jadi abu-abu gelap */
+    text-align: center;
+    padding: 20px 0; /* Jarak atas-bawah di dalam bar */
+    
+    /* DIUBAH: Menambahkan jarak dari konten di atasnya (sekitar 1cm) */
+    margin-top: 40px; 
 }
 
 .social-bar-section a {
-    color: #333; /* Warna ikon gelap agar kontras dengan latar putih */
-    font-size: 22px; /* Ukuran ikon */
-    margin: 0 16px; /* Jarak antar ikon */
-    transition: transform 0.2s ease; /* Animasi halus untuk efek 'nonjol' */
+    color: #fff; /* DIUBAH: Warna ikon jadi putih */
+    font-size: 22px;
+    margin: 0 16px;
+    transition: transform 0.2s ease, color 0.2s ease; /* Ditambah transisi warna */
     display: inline-block;
 }
 
 .social-bar-section a:hover {
-    transform: scale(1.2); /* Efek 'nonjol' atau membesar saat disentuh */
+    transform: scale(1.2);
+    color: #bbb; /* DIUBAH: Warna jadi abu-abu terang saat disentuh */
 }
