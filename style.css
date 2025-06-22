@@ -335,18 +335,13 @@ ul {
 
 /* Kode Baru (Posisi Teks Lebih Rendah di Desktop) */
 
+/* Kode baru untuk media query 768px */
 .slide-content {
-    position: absolute;
-    bottom: 8%; /* DIUBAH: Posisi diturunkan lagi lebih dekat ke bawah */
-    left: 50%;
-    transform: translateX(-50%); 
-    text-align: center;
-    width: 90%;
-    max-width: 600px;
-    z-index: 5;
-    text-shadow: 0 2px 4px rgba(0,0,0,0.5);
+    top: auto;
+    bottom: 45px; /* DIUBAH: Posisi diturunkan lagi lebih dekat ke titik */
+    transform: translateX(-50%);
+    width: 90%; /* DIUBAH: Diperlebar sedikit agar teks muat dalam 1 baris */
 }
-
 .slide-content h1 {
     font-size: 3em;
     /* DIUBAH: Jarak ke paragraf diperkecil */
@@ -354,10 +349,9 @@ ul {
     line-height: 1.2;
 }
 
+/* Kode baru untuk media query 480px */
 .slide-content p {
-    font-size: 1.2em;
-    /* DIUBAH: Jarak ke tombol diperkecil */
-    margin-bottom: 20px; 
+    font-size: 0.7em; /* DIUBAH: Diperkecil sedikit lagi agar pas 2 baris */
 }
     /* Aturan lain untuk mobile yang sudah ada sebelumnya */
     .navbar .logo {
