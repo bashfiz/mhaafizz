@@ -320,9 +320,13 @@ ul {
 /* Media Queries for Responsiveness (Basic) */
 
 @media (max-width: 768px) {
-    /* ... aturan mobile lain yang sudah ada ... */
+    /* Aturan untuk membuat slider lebih tinggi di mobile */
+    .hero-slider {
+        height: 60vh;
+        aspect-ratio: unset;
+    }
 
-    /* DITAMBAHKAN: Turunkan posisi teks di slider untuk mobile */
+    /* Aturan untuk menurunkan posisi teks di slider mobile */
     .slide-content {
         top: auto;
         bottom: 55px; 
@@ -330,7 +334,7 @@ ul {
         width: 85%;
     }
 
-    /* Aturan ukuran font yang sudah kita ubah sebelumnya */
+    /* Aturan untuk memperkecil tulisan di slider mobile */
     .slide-content h1 {
         font-size: 1.8em;
     }
@@ -338,40 +342,20 @@ ul {
     .slide-content p {
         font-size: 0.9em;
     }
-    
-    /* ... aturan mobile lain yang sudah ada ... */
-}
-    /* DITAMBAHKAN: Aturan untuk membuat slider lebih tinggi di mobile */
-.hero-slider {
-    /* Mengatur tinggi slider menjadi 60% dari tinggi layar HP */
-    height: 60vh;
-    /* Membatalkan rasio aspek dari versi desktop agar tinggi ini berlaku */
-    aspect-ratio: unset;
-}
+
+    /* Aturan lain untuk mobile yang sudah ada sebelumnya */
     .navbar .logo {
-        font-size: 28px; /* Sesuaikan ukuran untuk mobile */
+        font-size: 28px;
     }
 
-    .nav-icons {
+    .navbar .nav-icons {
         gap: 15px;
         font-size: 18px;
-    }
-
-    .hero-content h1 {
-        font-size: 2.2em;
-    }
-
-    .hero-content p {
-        font-size: 1em;
     }
 
     .discover-button {
         padding: 10px 25px;
         font-size: 1em;
-    }
-
-    .social-icons-hero {
-        font-size: 20px;
     }
 
     .main-navigation ul {
@@ -385,7 +369,7 @@ ul {
     }
 
     .section-title h2 {
-        font-size: 2em;
+        font-size: 22px; /* Disesuaikan dari 2em */
     }
 
     .bottom-bar {
@@ -399,13 +383,12 @@ ul {
 }
 
 @media (max-width: 480px) {/* DITAMBAHKAN: Sesuaikan ukuran font di slider untuk HP */
-/* DIUBAH: Ukuran tulisan slider untuk HP diperkecil lagi */
 .slide-content h1 {
-    font-size: 1.5em;
+    font-size: 1.8em;
 }
 
 .slide-content p {
-    font-size: 0.8em;
+    font-size: 0.9em;
 }
     .navbar {
         padding: 10px 15px;
