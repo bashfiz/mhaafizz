@@ -221,6 +221,9 @@ a {
     padding: 0 20px; /* Beri padding samping agar tidak mepet di layar lebih kecil */
 }
 
+/* Kode yang sudah diperbarui dengan shadow yang lebih jelas */
+/* Aturan Lengkap untuk Setiap Kotak Foto di Dalam Grid */
+
 .grid-item {
     position: relative;
     display: block;
@@ -228,22 +231,51 @@ a {
     border-radius: 0;
     text-decoration: none;
     color: white;
-    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
     aspect-ratio: 1 / 1;
 }
 
+/* INI BAGIAN PENTING UNTUK GRADASI HITAM */
+.grid-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* Gradasi dari hitam transparan di bawah ke bening di atas */
+    background: linear-gradient(to top, rgba(0,0,0,10) -5%, rgba(0,0,0,0) 20%);
+    z-index: 1; /* Posisi gradasi: di atas gambar, di bawah tulisan */
+}
+
+/* Gambar di Dalam Kotak */
+.grid-item img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover;
+    transition: transform 0.4s ease;
+}
+
+/* Efek Zoom Saat Kursor Menyentuh Kotak */
+.grid-item:hover img {
+    transform: scale(1.05);
+}
+
+/* Wadah Tulisan dan Panah di Dalam Kotak */
 .grid-item-label {
     position: absolute;
-    bottom: 0; left: 0; right: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
     padding: 20px;
-    z-index: 2;
+    z-index: 2; /* Posisi tulisan: di atas gradasi */
     display: flex;
     justify-content: space-between;
     align-items: center;
     font-weight: normal;
-    font-size: 1.1em;
+    font-size: 0,9em;
 }
-
 /* Footer Abu-abu */
 .footer-placeholder {
     text-align: center;
@@ -293,7 +325,7 @@ a {
     /* Atur galeri menu menjadi 2 kolom di mobile */
     .menu-grid {
         grid-template-columns: repeat(2, 1fr);
-        padding: 15px;
+        padding: 0 15px;
         gap: 15px;
         margin-bottom: 20px;
     }
