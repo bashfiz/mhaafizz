@@ -1,5 +1,5 @@
 /* ======================================= */
-/* VERSI FINAL                 */
+/* VERSI FINAL YANG SUDAH DIBERSIHKAN      */
 /* ======================================= */
 
 /* Pengenalan Font & Reset Dasar */
@@ -11,7 +11,7 @@
 body {
     margin: 0;
     font-family: 'Poppins', sans-serif;
-    background-color: #f5f5f5;
+    background-color: #fafafa; /* DIUBAH: Menjadi warna broken white */
     color: #333;
     overflow-x: hidden;
 }
@@ -19,6 +19,12 @@ body {
 a {
     text-decoration: none;
     color: inherit;
+}
+
+ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
 }
 
 /* Navbar */
@@ -45,11 +51,11 @@ a {
     display: flex;
     gap: 20px;
     font-size: 20px;
+    color: #555;
 }
 
 .navbar .nav-icons i {
     cursor: pointer;
-    color: #555;
 }
 
 /* Hero Slider */
@@ -83,7 +89,7 @@ a {
     display: block;
 }
 
-/* Konten Teks di atas Slider */
+/* Konten Teks di atas Slider (Desktop) */
 .slide-content {
     position: absolute;
     bottom: 55px;
@@ -123,7 +129,6 @@ a {
     transition: all 0.3s ease;
     text-shadow: none;
 }
-
 .discover-button:hover {
     background-color: transparent;
     color: #fff;
@@ -146,7 +151,6 @@ a {
     transition: background-color 0.3s ease;
     z-index: 10;
 }
-.slider-btn:hover { background-color: rgba(0, 0, 0, 0.7); }
 .prev-btn { left: 20px; }
 .next-btn { right: 20px; }
 
@@ -159,7 +163,6 @@ a {
     display: flex;
     gap: 10px;
 }
-
 .dot {
     width: 12px;
     height: 12px;
@@ -169,7 +172,6 @@ a {
     transition: all 0.3s ease;
     border: 1px solid rgba(0,0,0,0.2);
 }
-.dot:hover { transform: scale(1.2); }
 .dot.active { background-color: white; }
 
 /* Social Bar */
@@ -177,7 +179,6 @@ a {
     background-color: #333;
     text-align: center;
     padding: 12px 0;
-    margin-top: 20px;
 }
 
 .social-bar-section a {
@@ -200,7 +201,6 @@ a {
 /* Section Title (Hair to Toe) */
 .section-title {
     text-align: left;
-    /* DIUBAH: Jarak atas 40px, bawah 20px. Ini mengatur jarak ke galeri */
     padding: 40px 20px 20px;
 }
 
@@ -215,14 +215,11 @@ a {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 20px;
-    max-width: 1400px;
-    /* DIUBAH: Jarak atas 0 (karena sudah diatur .section-title), bawah 20px */
+    max-width: 1000px; /* DIUBAH: Ukuran kotak diperkecil */
     margin: 0 auto 20px;
-    padding: 0 20px; /* Beri padding samping agar tidak mepet di layar lebih kecil */
+    padding: 0 20px;
+    box-sizing: border-box;
 }
-
-/* Kode yang sudah diperbarui dengan shadow yang lebih jelas */
-/* Aturan Lengkap untuk Setiap Kotak Foto di Dalam Grid */
 
 .grid-item {
     position: relative;
@@ -235,7 +232,6 @@ a {
     aspect-ratio: 1 / 1;
 }
 
-/* INI BAGIAN PENTING UNTUK GRADASI HITAM */
 .grid-item::before {
     content: '';
     position: absolute;
@@ -243,12 +239,10 @@ a {
     left: 0;
     width: 100%;
     height: 100%;
-    /* Gradasi dari hitam transparan di bawah ke bening di atas */
-    background: linear-gradient(to top, rgba(0,0,0,10) -10%, rgba(0,0,0,0) 20%);
-    z-index: 1; /* Posisi gradasi: di atas gambar, di bawah tulisan */
+    background: linear-gradient(to top, rgba(0, 0, 0, 0.75) 0%, rgba(0, 0, 0, 0) 55%);
+    z-index: 1;
 }
 
-/* Gambar di Dalam Kotak */
 .grid-item img {
     width: 100%;
     height: 100%;
@@ -257,26 +251,22 @@ a {
     transition: transform 0.4s ease;
 }
 
-/* Efek Zoom Saat Kursor Menyentuh Kotak */
 .grid-item:hover img {
     transform: scale(1.05);
 }
 
-/* Wadah Tulisan dan Panah di Dalam Kotak */
 .grid-item-label {
     position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    padding: 20px;
-    z-index: 2; /* Posisi tulisan: di atas gradasi */
+    bottom: 0; left: 0; right: 0;
+    padding: 20px 20px 15px; /* DIUBAH: Posisi tulisan diturunkan di desktop */
+    z-index: 2;
     display: flex;
     justify-content: space-between;
     align-items: center;
     font-weight: normal;
-    font-size: 0,9em;
-    padding: 12px 15px; /* DIUBAH: Jarak atas-bawah diperkecil */
+    font-size: 1.1em;
 }
+
 /* Footer Abu-abu */
 .footer-placeholder {
     text-align: center;
@@ -291,56 +281,38 @@ a {
 /* ======================================= */
 
 @media (max-width: 1024px) {
-    /* Sembunyikan tombol panah slider di tablet & HP */
-    .slider-btn {
-        display: none;
-    }
+    .slider-btn { display: none; }
 }
 
 @media (max-width: 768px) {
-    /* Atur tinggi slider di mobile */
-    .hero-slider {
-        height: 60vh;
-        aspect-ratio: unset;
-    }
+    .hero-slider { height: 60vh; aspect-ratio: unset; }
     
-    /* Atur konten slider di mobile */
-    .slide-content {
-        bottom: 45px;
-        width: 90%;
-    }
+    .slide-content { bottom: 45px; width: 90%; }
     .p-desktop { display: none; }
     .p-mobile { display: block; }
     .slide-content h1 { font-size: 1.8em; }
     .slide-content p { font-size: 0.8em; }
     
-    /* Atur navbar di mobile */
     .navbar .logo { font-size: 32px; }
     
-    /* Atur judul "Hair to Toe" di mobile */
-    .section-title {
-        padding: 30px 15px 15px; /* Jarak atas & bawah diperkecil */
-    }
+    .section-title { padding: 30px 15px 15px; }
     .section-title h2 { font-size: 22px; }
 
-    /* Atur galeri menu menjadi 2 kolom di mobile */
     .menu-grid {
         grid-template-columns: repeat(2, 1fr);
-        padding: 0 15px;
-        gap: 20px;
+        padding: 0 20px; /* DIUBAH: Jarak pinggir diperbesar di mobile */
+        gap: 20px;       /* DIUBAH: Jarak antar kotak diperbesar di mobile */
+        margin-top: 0;
         margin-bottom: 20px;
     }
 
-    /* Kode yang sudah diperbarui */
-.grid-item-label {
-    font-size: 0.9em;
-    /* DIUBAH: Jarak atas-bawah dibuat lebih kecil lagi agar tulisan lebih turun */
-    padding: 8px 15px;
-}
+    .grid-item-label {
+        font-size: 0.9em;
+        padding: 15px 15px 10px; /* DIUBAH: Posisi tulisan diturunkan di mobile */
+    }
 }
 
 @media (max-width: 480px) {
-    /* Atur ulang font untuk HP terkecil */
     .slide-content h1 { font-size: 1.5em; }
     .slide-content p { font-size: 0.75em; }
     .navbar .logo { font-size: 28px; }
