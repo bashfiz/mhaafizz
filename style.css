@@ -310,7 +310,7 @@ ul {
     grid-template-columns: repeat(3, 1fr);
     gap: 20px;          /* Jarak presisi antar setiap kotak */
     max-width: 1300px;  /* DIUBAH: Dibuat lebih lebar agar menyebar ke samping */
-    margin: 20px auto;    /* Memberi jarak atas/bawah & menengahkan seluruh galeri */
+    margin: 10px auto;    /* Memberi jarak atas/bawah & menengahkan seluruh galeri */
     padding: 0;           /* Hapus padding internal agar kolom bisa 'penuh' */
 }
 /* Setiap Kotak Foto di Dalam Grid */
@@ -437,6 +437,7 @@ ul {
     grid-template-columns: repeat(2, 1fr); /* 2 kolom untuk mobile */
     padding: 15px; /* Jarak pinggir di mobile 15px */
     gap: 15px;     /* Jarak antar kotak di mobile juga 15px (PRESISI) */
+    margin-top: 0; /* DITAMBAHKAN: Menghilangkan jarak atas di mobile */
 }
 
 .grid-item-label {
