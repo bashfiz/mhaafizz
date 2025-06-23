@@ -438,7 +438,10 @@ ul {
     .section-title h2 {
         font-size: 22px;
     }
-
+    /* ATURAN BARU: Paksa galeri menjadi 2 kolom di mobile */
+.menu-grid {
+    grid-template-columns: repeat(2, 1fr);
+}
     .bottom-bar {
         font-size: 12px;
         padding: 8px 15px;
