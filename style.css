@@ -1,10 +1,13 @@
-/* DITAMBAHKAN: Mengenalkan font Fineday ke browser */
+/* ======================================= */
+/* VERSI FINAL                 */
+/* ======================================= */
+
+/* Pengenalan Font & Reset Dasar */
 @font-face {
   font-family: 'Fineday';
   src: url('assets/fonts/Fineday-StyleOne.ttf') format('truetype');
 }
 
-/* General Body and Reset */
 body {
     margin: 0;
     font-family: 'Poppins', sans-serif;
@@ -16,12 +19,6 @@ body {
 a {
     text-decoration: none;
     color: inherit;
-}
-
-ul {
-    list-style: none;
-    padding: 0;
-    margin: 0;
 }
 
 /* Navbar */
@@ -55,7 +52,7 @@ ul {
     color: #555;
 }
 
-/* Hero Slider Styles */
+/* Hero Slider */
 .hero-slider {
     position: relative;
     width: 100%;
@@ -86,10 +83,10 @@ ul {
     display: block;
 }
 
-/* Konten Teks di atas Slider (Desktop) */
+/* Konten Teks di atas Slider */
 .slide-content {
     position: absolute;
-    bottom: 60px;
+    bottom: 55px;
     left: 50%;
     transform: translateX(-50%);
     text-align: center;
@@ -111,10 +108,7 @@ ul {
     line-height: 1.3;
 }
 
-/* Sembunyikan paragraf mobile di desktop */
-.p-mobile {
-    display: none;
-}
+.p-mobile { display: none; }
 
 .discover-button {
     background-color: #fff;
@@ -136,7 +130,7 @@ ul {
     border-color: #fff;
 }
 
-/* Tombol Navigasi Slider */
+/* Navigasi Slider (Tombol & Titik) */
 .slider-btn {
     position: absolute;
     top: 50%;
@@ -144,24 +138,18 @@ ul {
     background-color: rgba(0, 0, 0, 0.4);
     color: white;
     border: none;
-    padding: 12px;
-    border-radius: 50%;
-    cursor: pointer;
     width: 45px;
     height: 45px;
+    border-radius: 50%;
+    cursor: pointer;
     font-size: 18px;
     transition: background-color 0.3s ease;
     z-index: 10;
 }
-
-.slider-btn:hover {
-    background-color: rgba(0, 0, 0, 0.7);
-}
-
+.slider-btn:hover { background-color: rgba(0, 0, 0, 0.7); }
 .prev-btn { left: 20px; }
 .next-btn { right: 20px; }
 
-/* Indikator Titik Slider */
 .slider-dots {
     position: absolute;
     bottom: 20px;
@@ -178,14 +166,13 @@ ul {
     border-radius: 50%;
     background-color: rgba(255, 255, 255, 0.5);
     cursor: pointer;
-    transition: background-color 0.3s ease, transform 0.3s ease;
+    transition: all 0.3s ease;
     border: 1px solid rgba(0,0,0,0.2);
 }
-
 .dot:hover { transform: scale(1.2); }
 .dot.active { background-color: white; }
 
-/* Social Bar Section */
+/* Social Bar */
 .social-bar-section {
     background-color: #333;
     text-align: center;
@@ -200,13 +187,9 @@ ul {
     transition: transform 0.2s ease, color 0.2s ease;
     display: inline-block;
 }
+.social-bar-section a:hover { transform: scale(1.2); color: #bbb; }
 
-.social-bar-section a:hover {
-    transform: scale(1.2);
-    color: #bbb;
-}
-
-/* Main Navigation (Menu Teks) */
+/* Menu Teks (Verified About Me, dll) */
 .main-navigation {
     background-color: #fff;
     padding: 20px 0;
@@ -214,159 +197,64 @@ ul {
     text-align: center;
 }
 
-.main-navigation ul {
-    display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
-    gap: 15px;
-}
-
-.main-navigation ul li a {
-    font-size: 1em;
-    font-weight: bold;
-    color: #555;
-    text-transform: uppercase;
-    padding: 5px 10px;
-    transition: color 0.3s ease;
-}
-
-.main-navigation ul li a:hover {
-    color: #000;
-}
-
 /* Section Title (Hair to Toe) */
 .section-title {
     text-align: left;
-    padding: 40px 20px; 
+    /* DIUBAH: Jarak atas 40px, bawah 20px. Ini mengatur jarak ke galeri */
+    padding: 40px 20px 20px;
 }
 
-/* Anda akan menemukan kode ini... */
 .section-title h2 {
     font-size: 25px;
     color: #333;
     margin: 0;
 }
 
-/* --- TAMBAHKAN KODE BARU DI BAWAH INI --- */
-
-/* Gaya untuk Footer */
-/* Kode yang sudah diperbarui dengan margin negatif */
-.footer-placeholder {
-    text-align: center;
-    padding: 15px 20px;
-    background-color: #eee;
-    color: #666;
-    font-size: 0.9em;
-    margin-top: -10px; /* DITAMBAHKAN: Menarik footer 10px ke atas */
-}
-
-/* --- BATAS AKHIR KODE BARU --- */ 
-
-/* Bottom Bar (Simulasi Browser) */
-.bottom-bar {
-    position: fixed;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    background-color: #333;
-    color: #fff;
-    padding: 10px 20px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    font-size: 14px;
-    z-index: 1001;
-}
-
-.bottom-bar .browser-info {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
-
-.bottom-bar .browser-info i {
-    color: #4CAF50;
-}
-
-.bottom-bar .browser-nav-buttons {
-    display: flex;
-    gap: 20px;
-}
-
-.bottom-bar .browser-nav-buttons i {
-    cursor: pointer;
-    opacity: 0.7;
-    transition: opacity 0.3s ease;
-}
-
-.bottom-bar .browser-nav-buttons i:hover {
-    opacity: 1;
-}
-/* DITAMBAHKAN: Gaya untuk Grid Menu Foto */
-
-/* PENGATURAN FINAL UNTUK GALERI DESKTOP YANG PRESISI */
+/* Galeri Menu Foto */
 .menu-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 20px;          /* Jarak presisi antar setiap kotak */
-    max-width: 1300px;  /* DIUBAH: Dibuat lebih lebar agar menyebar ke samping */
-    margin: -10px auto;    /* Memberi jarak atas/bawah & menengahkan seluruh galeri */
-    padding: 0;           /* Hapus padding internal agar kolom bisa 'penuh' */
+    gap: 20px;
+    max-width: 1100px;
+    /* DIUBAH: Jarak atas 0 (karena sudah diatur .section-title), bawah 20px */
+    margin: 0 auto 20px;
+    padding: 0 20px; /* Beri padding samping agar tidak mepet di layar lebih kecil */
 }
-/* Setiap Kotak Foto di Dalam Grid */
+
 .grid-item {
     position: relative;
     display: block;
     overflow: hidden;
-    border-radius: 0px; /* Sudut lebih melengkung */
+    border-radius: 0;
     text-decoration: none;
     color: white;
     box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-    aspect-ratio: 1 / 1; /* Bentuk persegi 1:1 */
+    aspect-ratio: 1 / 1;
 }
 
-/* Efek Overlay Gelap di Atas Gambar */
-.grid-item::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0) 60%);
-    z-index: 1;
-}
-
-/* Gambar di Dalam Kotak */
-.grid-item img {
-    width: 100%;
-    height: 100%;
-    display: block;
-    object-fit: cover;
-    transition: transform 0.4s ease;
-}
-
-/* Efek Zoom Saat Kursor Menyentuh Kotak */
-.grid-item:hover img {
-    transform: scale(1.05);
-}
-
-/* Wadah Tulisan dan Panah di Dalam Kotak */
 .grid-item-label {
     position: absolute;
-    bottom: 0;
-    left: 0;
-    right: 0;
-    padding: 15px; /* Jarak tulisan dari pinggir kotak juga 20px */
+    bottom: 0; left: 0; right: 0;
+    padding: 20px;
     z-index: 2;
     display: flex;
     justify-content: space-between;
     align-items: center;
     font-weight: normal;
-    font-size: 0,9em;
+    font-size: 1.1em;
 }
+
+/* Footer Abu-abu */
+.footer-placeholder {
+    text-align: center;
+    padding: 25px 20px;
+    background-color: #eee;
+    color: #666;
+    font-size: 0.9em;
+}
+
 /* ======================================= */
-/* MEDIA QUERIES (RESPONSIVE)         */
+/* ATURAN RESPONSIVE (MOBILE)              */
 /* ======================================= */
 
 @media (max-width: 1024px) {
@@ -382,89 +270,45 @@ ul {
         height: 60vh;
         aspect-ratio: unset;
     }
-/* DITAMBAHKAN: Ubah grid menjadi 1 kolom di mobile */
-.menu-grid {
-    grid-template-columns: 1fr;
-    gap: 20px; /* Jarak antar item bisa diperbesar di mobile */
-}
-    /* Atur posisi dan lebar konten slider di mobile */
+    
+    /* Atur konten slider di mobile */
     .slide-content {
-        top: auto;
         bottom: 45px;
-        transform: translateX(-50%);
         width: 90%;
     }
+    .p-desktop { display: none; }
+    .p-mobile { display: block; }
+    .slide-content h1 { font-size: 1.8em; }
+    .slide-content p { font-size: 0.8em; }
+    
+    /* Atur navbar di mobile */
+    .navbar .logo { font-size: 32px; }
+    
+    /* Atur judul "Hair to Toe" di mobile */
+    .section-title {
+        padding: 30px 15px 15px; /* Jarak atas & bawah diperkecil */
+    }
+    .section-title h2 { font-size: 22px; }
 
-    /* Sembunyikan teks desktop, tampilkan teks mobile */
-    .p-desktop {
-        display: none;
-    }
-    .p-mobile {
-        display: block;
-    }
-
-    /* Atur ukuran font konten slider di mobile */
-    .slide-content h1 {
-        font-size: 1.8em;
-        margin-bottom: 8px;
-    }
-    .slide-content p {
-        font-size: 0.8em;
-        line-height: 1.4;
-        margin-bottom: 22px;
-    }
-
-    /* Aturan responsif lain */
-    .navbar .logo {
-        font-size: 28px;
-    }
-
-    .navbar .nav-icons {
+    /* Atur galeri menu menjadi 2 kolom di mobile */
+    .menu-grid {
+        grid-template-columns: repeat(2, 1fr);
+        padding: 0 15px;
         gap: 15px;
-        font-size: 18px;
+        margin-bottom: 15px;
     }
 
-    .main-navigation ul {
-        flex-direction: column;
-        gap: 10px;
-    }
-
-    .section-title h2 {
-        font-size: 22px;
-    }
-    /* Aturan Presisi untuk Tampilan Mobile */
-.menu-grid {
-    grid-template-columns: repeat(2, 1fr); /* 2 kolom untuk mobile */
-    padding: 0px; /* Jarak pinggir di mobile 15px */
-    gap: 15px;     /* Jarak antar kotak di mobile juga 15px (PRESISI) */
-    margin-top: -20; /* DITAMBAHKAN: Menghilangkan jarak atas di mobile */
-}
-
-.grid-item-label {
-    font-size: 0.9em; /* Ukuran tulisan diperkecil di mobile */
-    padding: 15px;    /* Jarak tulisan dari pinggir juga 15px */
-}
-    .bottom-bar {
-        font-size: 8px;
-        padding: 8px 15px;
+    /* Atur tulisan di dalam kotak galeri mobile */
+    .grid-item-label {
+        font-size: 0.9em;
+        padding: 15px;
     }
 }
 
 @media (max-width: 480px) {
-    /* Atur ukuran font konten slider untuk HP terkecil */
-    .slide-content h1 {
-        font-size: 1.5em;
-    }
-    .slide-content p {
-        font-size: 0.75em;
-    }
-    
-    /* Aturan responsif lain */
-    .navbar .logo {
-        font-size: 24px;
-    }
-
-    .section-title h2 {
-        font-size: 20px;
-    }
+    /* Atur ulang font untuk HP terkecil */
+    .slide-content h1 { font-size: 1.5em; }
+    .slide-content p { font-size: 0.75em; }
+    .navbar .logo { font-size: 28px; }
+    .section-title h2 { font-size: 20px; }
 }
