@@ -244,7 +244,7 @@ a {
     width: 100%;
     height: 100%;
     /* Gradasi dari hitam transparan di bawah ke bening di atas */
-    background: linear-gradient(to top, rgba(0,0,0,10) -5%, rgba(0,0,0,0) 20%);
+    background: linear-gradient(to top, rgba(0,0,0,10) -10%, rgba(0,0,0,0) 20%);
     z-index: 1; /* Posisi gradasi: di atas gambar, di bawah tulisan */
 }
 
@@ -327,15 +327,16 @@ a {
     .menu-grid {
         grid-template-columns: repeat(2, 1fr);
         padding: 0 15px;
-        gap: 15px;
+        gap: 20px;
         margin-bottom: 20px;
     }
 
-    /* Atur tulisan di dalam kotak galeri mobile */
-    .grid-item-label {
-        font-size: 0.9em;
-        padding: 12px 15px; /* DIUBAH: Jarak atas-bawah diperkecil */
-    }
+    /* Kode yang sudah diperbarui */
+.grid-item-label {
+    font-size: 0.9em;
+    /* DIUBAH: Jarak atas-bawah dibuat lebih kecil lagi agar tulisan lebih turun */
+    padding: 8px 15px;
+}
 }
 
 @media (max-width: 480px) {
