@@ -304,32 +304,28 @@ ul {
 }
 /* DITAMBAHKAN: Gaya untuk Grid Menu Foto */
 
-/* Wadah utama grid */
-/* Kode yang sudah diperbarui untuk Desktop */
+/* PENGATURAN FINAL UNTUK GALERI DESKTOP YANG PRESISI */
 .menu-grid {
     display: grid;
-    /* DIUBAH: Menjadi 3 kolom */
-    grid-template-columns: repeat(3, 1fr); 
-    gap: 70px;
-    padding: 50px;
-    /* DIUBAH: Sedikit dilebarkan agar 3 kolom terlihat bagus */
-    max-width: 900px; 
-    margin: 0 auto;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;          /* Jarak presisi antar setiap kotak */
+    max-width: 1300px;  /* DIUBAH: Dibuat lebih lebar agar menyebar ke samping */
+    margin: 20px auto;    /* Memberi jarak atas/bawah & menengahkan seluruh galeri */
+    padding: 0;           /* Hapus padding internal agar kolom bisa 'penuh' */
 }
-
-/* Setiap item di dalam grid (kotak foto) */
+/* Setiap Kotak Foto di Dalam Grid */
 .grid-item {
-    position: relative; /* Penting untuk posisi tulisan di atasnya */
+    position: relative;
     display: block;
-    overflow: hidden; /* Agar sudut lengkung memotong gambar */
-    border-radius: 12px; /* Membuat sudut menjadi lengkung */
+    overflow: hidden;
+    border-radius: 0px; /* Sudut lebih melengkung */
     text-decoration: none;
     color: white;
-    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-    aspect-ratio: 1 / 1; /* DITAMBAHKAN: Membuat ukuran kotak jadi persegi 1:1 */
+    box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+    aspect-ratio: 1 / 1; /* Bentuk persegi 1:1 */
 }
 
-/* Efek overlay gelap di atas gambar */
+/* Efek Overlay Gelap di Atas Gambar */
 .grid-item::before {
     content: '';
     position: absolute;
@@ -337,39 +333,37 @@ ul {
     left: 0;
     width: 100%;
     height: 100%;
-    /* Gradasi dari transparan di atas ke hitam di bawah */
     background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0) 60%);
-    z-index: 1; /* Pastikan overlay di atas gambar tapi di bawah teks */
-    aspect-ratio: 1 / 1; /* DITAMBAHKAN: Membuat ukuran kotak jadi persegi 1:1 */
+    z-index: 1;
 }
 
-/* Gambar di dalam kotak */
+/* Gambar di Dalam Kotak */
 .grid-item img {
     width: 100%;
     height: 100%;
     display: block;
-    object-fit: cover; /* Memastikan gambar memenuhi kotak tanpa gepeng */
-    transition: transform 0.4s ease; /* Animasi untuk efek zoom */
+    object-fit: cover;
+    transition: transform 0.4s ease;
 }
 
-/* Efek zoom saat kursor menyentuh kotak */
+/* Efek Zoom Saat Kursor Menyentuh Kotak */
 .grid-item:hover img {
     transform: scale(1.05);
 }
 
-/* Wadah untuk tulisan dan panah */
+/* Wadah Tulisan dan Panah di Dalam Kotak */
 .grid-item-label {
     position: absolute;
     bottom: 0;
     left: 0;
     right: 0;
-    padding: 20px;
-    z-index: 2; /* Pastikan teks di atas overlay */
+    padding: 15px; /* Jarak tulisan dari pinggir kotak juga 20px */
+    z-index: 2;
     display: flex;
-    justify-content: space-between; /* Tulisan di kiri, panah di kanan */
+    justify-content: space-between;
     align-items: center;
     font-weight: bold;
-    font-size: 1.1em;
+    font-size: 0,9em;
 }
 /* ======================================= */
 /* MEDIA QUERIES (RESPONSIVE)         */
@@ -438,9 +432,16 @@ ul {
     .section-title h2 {
         font-size: 22px;
     }
-    /* ATURAN BARU: Paksa galeri menjadi 2 kolom di mobile */
+    /* Aturan Presisi untuk Tampilan Mobile */
 .menu-grid {
-    grid-template-columns: repeat(2, 1fr);
+    grid-template-columns: repeat(2, 1fr); /* 2 kolom untuk mobile */
+    padding: 15px; /* Jarak pinggir di mobile 15px */
+    gap: 15px;     /* Jarak antar kotak di mobile juga 15px (PRESISI) */
+}
+
+.grid-item-label {
+    font-size: 0.9em; /* Ukuran tulisan diperkecil di mobile */
+    padding: 15px;    /* Jarak tulisan dari pinggir juga 15px */
 }
     .bottom-bar {
         font-size: 12px;
