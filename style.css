@@ -286,10 +286,10 @@ ul {
 /* GAYA UNTUK BAGIAN MUSIK & INSTAGRAM   */
 /* ======================================= */
 
-/* Aturan Umum untuk Judul Kecil di Atas Kartu */
+/* Kode yang Sudah Diperbarui */
 .card-eyebrow {
-    font-size: 0.8em;
-    font-weight: bold;
+    font-size: 4em; /* DIUBAH: Diperbesar sedikit */
+    font-weight: 700; /* DIUBAH: Ditegaskan lagi agar tebal (nilai angka untuk bold) */
     text-transform: uppercase;
     letter-spacing: 2px;
     color: #888;
@@ -302,17 +302,58 @@ ul {
     padding: 40px 20px;
 }
 
+/* ======================================= */
+/* GAYA FINAL BAGIAN MUSIK               */
+/* ======================================= */
+
+/* Bagian pembungkus utama */
+.music-section {
+    padding: 40px 20px;
+}
+
+/* KARTU LUAR (KOTAK OUTLINE) */
 .music-card {
-    max-width: 380px;
+    max-width: 600px; /* DIUBAH: Wadah luar dibuat jauh lebih lebar */
     margin: 0 auto;
-    background-color: #fff;
+    background-color: #f8ffce;
     border: 1px solid #e0e0e0;
     border-radius: 16px;
-    padding: 24px;
+    padding: 15px 24px 24px; 
     box-shadow: 0 4px 15px rgba(0,0,0,0.05);
     text-align: center;
 }
 
+/* Kode yang Sudah Diperbarui */
+.card-eyebrow {
+    font-size: 4em; /* DIUBAH: Ukuran font kembali normal */
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #000000;
+    margin: -10px 0 20px;
+    text-align: center;
+}
+/* Judul "Dengarkan Lebih Banyak..." */
+.music-card .card-main-title {
+    font-size: 1.2em;
+    font-weight: bold;
+    margin: 24px 0 16px;
+}
+
+
+/* --- INI BAGIAN KUNCINYA --- */
+/* KITA BERI BATAS LEBAR UNTUK KONTEN DI DALAM KARTU */
+.spotify-profile-embed,
+.music-link {
+    max-width: 360px; /* Batasi lebar konten agar tidak meregang */
+    margin-left: auto;   /* Trik untuk menengahkan konten */
+    margin-right: auto;  /* Trik untuk menengahkan konten */
+    box-sizing: border-box;
+}
+/* ------------------------- */
+
+
+/* Tampilan Profil Spotify Embed */
 .spotify-profile-embed {
     background-color: #191414;
     color: white;
@@ -335,21 +376,13 @@ ul {
 
 .sp-user {
     text-align: left;
-    flex-grow: 1; /* Membuatnya mengambil sisa ruang */
-}
-.sp-user span {
-    font-weight: bold;
-}
-.sp-user p {
-    margin: 4px 0 0;
-    font-size: 0.9em;
-    color: #b3b3b3;
+    flex-grow: 1;
 }
 
-.sp-logo {
-    font-size: 28px;
-    color: #1DB954;
-}
+.sp-user span { font-weight: bold; }
+.sp-user p { margin: 4px 0 0; font-size: 0.9em; color: #b3b3b3; }
+
+.sp-logo { font-size: 28px; color: #1DB954; }
 
 .sp-discover-btn {
     display: inline-block;
@@ -363,16 +396,10 @@ ul {
     margin-top: 20px;
     transition: background-color 0.2s ease;
 }
-.sp-discover-btn:hover {
-    background-color: #333;
-}
+.sp-discover-btn:hover { background-color: #333; }
 
-.music-card .card-main-title {
-    font-size: 1.2em;
-    font-weight: bold;
-    margin: 24px 0 16px;
-}
 
+/* Tombol Link Spotify & Apple Music */
 .music-link {
     display: flex;
     align-items: center;
@@ -386,18 +413,11 @@ ul {
     margin-top: 10px;
     transition: opacity 0.2s ease;
 }
-.music-link:hover {
-    opacity: 0.9;
-}
-.music-link i {
-    font-size: 1.2em;
-}
-.spotify-link {
-    background-color: #1DB954;
-}
-.apple-link {
-    background-color: #fa233b;
-}
+.music-link:hover { opacity: 0.9; }
+.music-link i { font-size: 1.2em; }
+
+.spotify-link { background-color: #1DB954; }
+.apple-link { background-color: #fa233b; }
 
 /* Bagian Instagram */
 .instagram-section {
