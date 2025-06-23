@@ -275,6 +275,7 @@ a {
     align-items: center;
     font-weight: normal;
     font-size: 0,9em;
+    padding: 12px 15px; /* DIUBAH: Jarak atas-bawah diperkecil */
 }
 /* Footer Abu-abu */
 .footer-placeholder {
@@ -333,7 +334,7 @@ a {
     /* Atur tulisan di dalam kotak galeri mobile */
     .grid-item-label {
         font-size: 0.9em;
-        padding: 15px;
+        padding: 12px 15px; /* DIUBAH: Jarak atas-bawah diperkecil */
     }
 }
 
