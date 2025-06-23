@@ -39,7 +39,7 @@ ul {
 
 .navbar .logo {
     font-family: 'Fineday', sans-serif;
-    font-size: 32px;
+    font-size: 36px;
     font-weight: normal;
     color: #333;
 }
@@ -250,21 +250,17 @@ ul {
 /* --- TAMBAHKAN KODE BARU DI BAWAH INI --- */
 
 /* Gaya untuk Footer */
+/* Kode yang sudah diperbarui dengan margin negatif */
 .footer-placeholder {
-    text-align: center; /* INI KUNCINYA: Membuat teks di dalamnya jadi ke tengah */
-    padding: 50px 20px;
+    text-align: center;
+    padding: 15px 20px;
     background-color: #eee;
     color: #666;
     font-size: 0.9em;
+    margin-top: -10px; /* DITAMBAHKAN: Menarik footer 10px ke atas */
 }
 
-/* --- BATAS AKHIR KODE BARU --- */
-
-
-/* Di bawahnya akan ada kode untuk .bottom-bar */
-.bottom-bar {
-    /* ... isinya ... */
-}
+/* --- BATAS AKHIR KODE BARU --- */ 
 
 /* Bottom Bar (Simulasi Browser) */
 .bottom-bar {
@@ -306,7 +302,75 @@ ul {
 .bottom-bar .browser-nav-buttons i:hover {
     opacity: 1;
 }
+/* DITAMBAHKAN: Gaya untuk Grid Menu Foto */
 
+/* Wadah utama grid */
+/* Kode yang sudah diperbarui untuk Desktop */
+.menu-grid {
+    display: grid;
+    /* DIUBAH: Menjadi 3 kolom */
+    grid-template-columns: repeat(3, 1fr); 
+    gap: 70px;
+    padding: 50px;
+    /* DIUBAH: Sedikit dilebarkan agar 3 kolom terlihat bagus */
+    max-width: 900px; 
+    margin: 0 auto;
+}
+
+/* Setiap item di dalam grid (kotak foto) */
+.grid-item {
+    position: relative; /* Penting untuk posisi tulisan di atasnya */
+    display: block;
+    overflow: hidden; /* Agar sudut lengkung memotong gambar */
+    border-radius: 12px; /* Membuat sudut menjadi lengkung */
+    text-decoration: none;
+    color: white;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+    aspect-ratio: 1 / 1; /* DITAMBAHKAN: Membuat ukuran kotak jadi persegi 1:1 */
+}
+
+/* Efek overlay gelap di atas gambar */
+.grid-item::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    /* Gradasi dari transparan di atas ke hitam di bawah */
+    background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0) 60%);
+    z-index: 1; /* Pastikan overlay di atas gambar tapi di bawah teks */
+    aspect-ratio: 1 / 1; /* DITAMBAHKAN: Membuat ukuran kotak jadi persegi 1:1 */
+}
+
+/* Gambar di dalam kotak */
+.grid-item img {
+    width: 100%;
+    height: 100%;
+    display: block;
+    object-fit: cover; /* Memastikan gambar memenuhi kotak tanpa gepeng */
+    transition: transform 0.4s ease; /* Animasi untuk efek zoom */
+}
+
+/* Efek zoom saat kursor menyentuh kotak */
+.grid-item:hover img {
+    transform: scale(1.05);
+}
+
+/* Wadah untuk tulisan dan panah */
+.grid-item-label {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 20px;
+    z-index: 2; /* Pastikan teks di atas overlay */
+    display: flex;
+    justify-content: space-between; /* Tulisan di kiri, panah di kanan */
+    align-items: center;
+    font-weight: bold;
+    font-size: 1.1em;
+}
 /* ======================================= */
 /* MEDIA QUERIES (RESPONSIVE)         */
 /* ======================================= */
@@ -324,7 +388,11 @@ ul {
         height: 60vh;
         aspect-ratio: unset;
     }
-
+/* DITAMBAHKAN: Ubah grid menjadi 1 kolom di mobile */
+.menu-grid {
+    grid-template-columns: 1fr;
+    gap: 20px; /* Jarak antar item bisa diperbesar di mobile */
+}
     /* Atur posisi dan lebar konten slider di mobile */
     .slide-content {
         top: auto;
