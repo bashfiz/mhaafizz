@@ -437,7 +437,7 @@ ul {
     grid-template-columns: repeat(2, 1fr); /* 2 kolom untuk mobile */
     padding: 15px; /* Jarak pinggir di mobile 15px */
     gap: 15px;     /* Jarak antar kotak di mobile juga 15px (PRESISI) */
-    margin-top: 0; /* DITAMBAHKAN: Menghilangkan jarak atas di mobile */
+    margin-top: -20; /* DITAMBAHKAN: Menghilangkan jarak atas di mobile */
 }
 
 .grid-item-label {
