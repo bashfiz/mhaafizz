@@ -58,16 +58,25 @@ ul {
     cursor: pointer;
 }
 
-/* Hero Slider */
-.hero-slider {
-    position: relative;
-    width: 100%;
-    aspect-ratio: 16 / 7;
-    max-height: 70vh;
-    overflow: hidden;
-    background-color: #eee;
-}
+/* ... (kode CSS lainnya ada di atas) ... */
 
+@media (max-width: 767px) {
+    /* Aturan ini hanya aktif jika lebar layar 767px atau kurang */
+
+    .menu-grid {
+        /* Mengubah grid menjadi 2 kolom di layar mobile */
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+    }
+
+    /* ▼▼▼ TAMBAHKAN KODE BARU DI BAWAH INI ▼▼▼ */
+    .hero-slider {
+        /* Mengubah rasio banner agar lebih tinggi di mobile */
+        aspect-ratio: 4 / 3; /* Lebih tinggi dari 16/7, tapi tidak full screen */
+        max-height: 80vh;    /* Sedikit menaikkan batas tinggi maksimal */
+    }
+    /* ▲▲▲ SAMPAI SINI ▲▲▲ */
+}
 .slider-wrapper {
     display: flex;
     height: 100%;
@@ -150,6 +159,8 @@ ul {
     font-size: 18px;
     transition: background-color 0.3s ease;
     z-index: 10;
+    .slider-btn {
+    display: none;
 }
 .prev-btn { left: 20px; }
 .next-btn { right: 20px; }
@@ -519,5 +530,18 @@ body {
         font-size: 1.1rem;
         color: #555; /* Warna sedikit abu-abu agar tidak terlalu mencolok */
         font-style: italic;
+    }
+}
+/* ======================================= */
+/* PENYESUAIAN RESPONSIVE TAMBAHAN       */
+/* ======================================= */
+
+@media (max-width: 767px) {
+    /* Aturan ini hanya aktif jika lebar layar 767px atau kurang (ukuran tablet potret ke bawah) */
+
+    .menu-grid {
+        /* Mengubah grid menjadi 2 kolom di layar mobile */
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px; /* Jarak antar kotak sedikit diperkecil agar pas di mobile */
     }
 }
