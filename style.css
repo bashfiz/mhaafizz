@@ -459,20 +459,17 @@ ul {
     width: 100%;
     display: block;
 }
-/* ======================================= */
-/* ATURAN RESPONSIVE (MOBILE)              */
-/* ======================================= */
-
 /* ================================================= */
-/* BAGIAN RESPONSIVE (MOBILE) - VERSI SUDAH DIPERBAIKI */
+/* BAGIAN RESPONSIVE (MOBILE) - VERSI FINAL & BENAR  */
 /* ================================================= */
 
 @media (max-width: 1024px) {
+    /* Menyembunyikan tombol panah slider di tablet */
     .slider-btn { display: none; }
 }
 
 @media (max-width: 768px) {
-    /* --- Penyesuaian Umum untuk Tablet & Mobile --- */
+    /* --- PENYESUAIAN UMUM UNTUK TABLET & MOBILE --- */
     .hero-slider { height: 60vh; aspect-ratio: unset; }
     .slide-content h1 { font-size: 1.8em; }
     .slide-content p { font-size: 0.8em; }
@@ -482,45 +479,44 @@ ul {
     .menu-grid {
         grid-template-columns: repeat(2, 1fr);
     }
+    .grid-item-label {
+        font-size: 0.9em;
+    }
 
-    /* --- Penyesuaian untuk Bagian Musik di Mobile --- */
+    /* --- PENYESUAIAN KARTU MUSIK DI MOBILE --- */
     .music-section .card-eyebrow {
-        font-size: 2.2em;
+        font-size: 2em; /* Judul "MUSIC" dikecilkan */
     }
     .music-card {
-        width: 90%; /* Atur lebar kartu menjadi 90% dari ruang yang tersedia */
+        width: 90%; /* Lebar kartu dibuat 90% agar tidak penuh */
+        padding: 16px; /* Jarak di dalam kartu dikecilkan */
     }
-
+    /* Konten di dalam kartu musik dibuat responsif */
     .spotify-profile-embed,
     .music-link {
         max-width: 100%;
     }
 
-    .spotify-profile-embed,
-    .music-link {
-        max-width: 100%; /* Konten di dalam kartu musik dibuat responsif */
-    }
-
-    /* --- Penyesuaian untuk Bagian Instagram di Mobile --- */
+    /* --- PENYESUAIAN TEKS INSTAGRAM DI MOBILE --- */
     .instagram-section .card-eyebrow {
-        font-size: 1.6em; /* Judul "Follow me" dikecilkan */
+        font-size: 1.8em; /* Judul "Follow me" dikecilkan */
         padding-left: 0;
     }
     .instagram-handle {
-        font-size: 1.2em; /* Tulisan "@mhaafizz" dikecilkan */
+        font-size: 1.4em; /* Tulisan "@mhaafizz" dikecilkan */
         padding-left: 0;
-        margin-top: 5px;
+        margin-top: 0px;
     }
 }
 
 @media (max-width: 480px) {
-    /* --- Penyesuaian Tambahan untuk Layar HP Kecil --- */
+    /* --- PENYESUAIAN TAMBAHAN UNTUK LAYAR HP KECIL --- */
     .slide-content h1 { font-size: 1.5em; }
     .slide-content p { font-size: 0.75em; }
     .navbar .logo { font-size: 28px; }
 
     /* Ukuran Judul Section lebih kecil lagi di HP */
     .music-section .card-eyebrow { font-size: 1.8em; }
-    .instagram-section .card-eyebrow { font-size: 1.4em; }
-    .instagram-handle { font-size: 1em; }
+    .instagram-section .card-eyebrow { font-size: 1.5em; }
+    .instagram-handle { font-size: 1.2em; }
 }
