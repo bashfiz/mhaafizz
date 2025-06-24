@@ -500,11 +500,11 @@ ul {
     /* --- PENYESUAIAN TEKS INSTAGRAM DI MOBILE --- */
     .instagram-section .card-eyebrow {
         font-size: 1.4em; /* Judul "Follow me" dikecilkan */
-        padding-left: 50;
+        padding-left: -50px;
     }
     .instagram-handle {
         font-size: 1.4em; /* Tulisan "@mhaafizz" dikecilkan */
-        padding-left: 50;
+        padding-left: -50px;
         margin-top: 0px;
     }
 }
