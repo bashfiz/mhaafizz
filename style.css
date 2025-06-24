@@ -58,25 +58,16 @@ ul {
     cursor: pointer;
 }
 
-/* ... (kode CSS lainnya ada di atas) ... */
-
-@media (max-width: 767px) {
-    /* Aturan ini hanya aktif jika lebar layar 767px atau kurang */
-
-    .menu-grid {
-        /* Mengubah grid menjadi 2 kolom di layar mobile */
-        grid-template-columns: repeat(2, 1fr);
-        gap: 15px;
-    }
-
-    /* ▼▼▼ TAMBAHKAN KODE BARU DI BAWAH INI ▼▼▼ */
-    .hero-slider {
-        /* Mengubah rasio banner agar lebih tinggi di mobile */
-        aspect-ratio: 4 / 3; /* Lebih tinggi dari 16/7, tapi tidak full screen */
-        max-height: 80vh;    /* Sedikit menaikkan batas tinggi maksimal */
-    }
-    /* ▲▲▲ SAMPAI SINI ▲▲▲ */
+/* Hero Slider */
+.hero-slider {
+    position: relative;
+    width: 100%;
+    aspect-ratio: 16 / 7;
+    max-height: 70vh;
+    overflow: hidden;
+    background-color: #eee;
 }
+
 .slider-wrapper {
     display: flex;
     height: 100%;
@@ -159,8 +150,6 @@ ul {
     font-size: 18px;
     transition: background-color 0.3s ease;
     z-index: 10;
-    .slider-btn {
-    display: none;
 }
 .prev-btn { left: 20px; }
 .next-btn { right: 20px; }
@@ -209,26 +198,18 @@ ul {
     text-align: center;
 }
 
-/* GANTIKAN SEMUA KODE LAMA ANDA UNTUK .section-title DENGAN INI */
-
+/* Section Title (Hair to Toe) */
 .section-title {
     text-align: left;
-    padding: 100px 20px 20px;
-    color: #000; /* <- INI YANG MEMBUAT SEMUA TULISAN JADI HITAM PEKAT */
+    padding: 40px 20px 20px;
 }
 
 .section-title h2 {
-    font-size: 40px;
-    font-weight: 750;
+    font-size: 25px;
+    color: #333;
     margin: 0;
-    /* Pastikan tidak ada properti 'color' di sini agar warnanya mengikuti wadah utama */
 }
 
-.section-title p {
-    font-weight: 800;
-    font-size: 2em;
-    margin-top: 5px;
-}
 /* Galeri Menu Foto */
 .menu-grid {
     display: grid;
@@ -446,102 +427,11 @@ ul {
     .navbar .logo { font-size: 28px; }
     .section-title h2 { font-size: 20px; }
 }
-/* KODE BARU */
-.section-title {
-    text-align: left;
-    padding: 0 20px 20px;
-    color: #000000; /* Menambahkan warna hitam untuk semua teks di dalamnya */
-}
 .section-divider {
     border: none;
     height: 5px;
-    background-color: #000000;
+    background-color: #000;
     width: 1250px;
     /* DIUBAH: Jarak atas 60px, jarak bawah diperkecil jadi 30px */
-     margin: 10px auto 10px;
-}
-/* Mengatur font dasar jika belum ada */
-body {
-    font-family: sans-serif;
-    background-color: #ffffff; /* Ganti dengan warna latar belakang websitemu */
-    color: #000000; /* Ganti dengan warna teks websitemu */
-}
-
-/* ======================================= */
-/* GAYA UNTUK SEKSI FOLLOW INSTAGRAM       */
-/* ======================================= */
-
-.instagram-content-wrapper {
-    padding: 0px 20px 20px; /* Jarak atas dibuat 0 karena sudah diatur oleh judul */
-    max-width: 900px;
-    margin: 0 auto;
-}
-
-.instagram-title h2 {
-    font-size: 1.2rem;
-    letter-spacing: 2px;
-    font-weight: normal;
-    margin-bottom: 5px;
-}
-
-
-.instagram-content {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    gap: 30px;
-}
-
-/* ... (sisa kode CSS untuk seksi Instagram biarkan seperti semula) ... */
-/* Style untuk gambar instagram */
-.instagram-link img {
-    display: block; /* Menghilangkan spasi ekstra di bawah gambar */
-    max-width: 320px; /* Lebar maksimum gambar */
-    width: 100%; /* Membuat gambar responsif, menyesuaikan lebar wadah */
-    border-radius: 12px; /* Sudut sedikit melengkung */
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Memberi efek bayangan halus */
-    transition: transform 0.3s ease; /* Animasi saat kursor di atasnya */
-}
-
-/* Efek hover pada gambar untuk desktop */
-.instagram-link:hover img {
-    transform: scale(1.03); /* Sedikit membesar saat kursor di atasnya */
-}
-
-
-/* --- TAMPILAN MOBILE (Layar di bawah 768px) --- */
-
-/* Sembunyikan tulisan "Sentuh gambar disamping" di mobile */
-.desktop-instruction {
-    display: none;
-}
-
-
-/* --- TAMPILAN DESKTOP/KOMPUTER (Layar 768px ke atas) --- */
-
-@media (min-width: 768px) {
-    /* Tampilkan kembali tulisan "Sentuh gambar disamping" */
-    .desktop-instruction {
-        display: block; /* Menampilkannya sebagai blok */
-        width: 200px;   /* Beri lebar agar tidak terlalu mepet */
-    }
-
-    .desktop-instruction p {
-        font-size: 1.1rem;
-        color: #555; /* Warna sedikit abu-abu agar tidak terlalu mencolok */
-        font-style: italic;
-    }
-}
-/* ======================================= */
-/* PENYESUAIAN RESPONSIVE TAMBAHAN       */
-/* ======================================= */
-
-@media (max-width: 767px) {
-    /* Aturan ini hanya aktif jika lebar layar 767px atau kurang (ukuran tablet potret ke bawah) */
-
-    .menu-grid {
-        /* Mengubah grid menjadi 2 kolom di layar mobile */
-        grid-template-columns: repeat(2, 1fr);
-        gap: 15px; /* Jarak antar kotak sedikit diperkecil agar pas di mobile */
-    }
+    margin: 10px auto 30px; 
 }
