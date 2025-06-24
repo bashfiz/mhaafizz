@@ -518,8 +518,45 @@ ul {
         font-size: 1.2em; /* Dikecilkan dari ukuran desktop (1.5em) */
         margin-bottom: 20px; /* Jarak bawah juga bisa disesuaikan untuk mobile */
     }
+    
+    @media (max-width: 768px) {
+    /* ======================================================= */
+    /* <-- TAMBAHKAN SEMUA ATURAN BARU DI BAWAH INI -->      */
+    /* ======================================================= */
+
+    /* --- Penyesuaian untuk Bagian Musik --- */
+
+    /* 1. Ukuran judul "MUSIC" dikecilkan di mobile */
+    .music-section .card-eyebrow {
+        font-size: 2.2em; 
+    }
+
+    /* 2. Ini membuat konten di dalam kartu musik (kotak hitam & tombol) menjadi responsif */
+    /* dan tidak keluar dari layar mobile. */
+    .spotify-profile-embed,
+    .music-link {
+        max-width: 100%; /* Lebarnya tidak lagi fix, tapi mengikuti lebar kartu */
+    }
+
+
+    /* --- Penyesuaian untuk Bagian Instagram --- */
+    
+    /* 3. Ukuran judul "Follow Me On Instagram" dikecilkan */
+    .instagram-section .card-eyebrow {
+        font-size: 1.6em;
+        padding-left: 0; /* Dibuat rata kiri agar rapi di mobile */
+    }
+
+    /* 4. Ukuran handle "@mhaafizz" dikecilkan */
+    .instagram-handle {
+        font-size: 1.2em;
+        padding-left: 0; /* Dibuat rata kiri agar sejajar di mobile */
+    }
 
 } /* <-- Ini adalah kurung kurawal penutup dari @media */
+
+} /* <-- Ini adalah kurung kurawal penutup dari @media */
+
 }
 
 @media (max-width: 480px) {
