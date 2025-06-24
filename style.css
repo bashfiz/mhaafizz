@@ -485,8 +485,17 @@ ul {
 
     /* --- Penyesuaian untuk Bagian Musik di Mobile --- */
     .music-section .card-eyebrow {
-        font-size: 2.2em; /* Judul "MUSIC" dikecilkan */
+        font-size: 2.2em;
     }
+    .music-card {
+        width: 90%; /* Atur lebar kartu menjadi 90% dari ruang yang tersedia */
+    }
+
+    .spotify-profile-embed,
+    .music-link {
+        max-width: 100%;
+    }
+
     .spotify-profile-embed,
     .music-link {
         max-width: 100%; /* Konten di dalam kartu musik dibuat responsif */
