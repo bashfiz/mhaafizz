@@ -463,105 +463,55 @@ ul {
 /* ATURAN RESPONSIVE (MOBILE)              */
 /* ======================================= */
 
+/* ================================================= */
+/* BAGIAN RESPONSIVE (MOBILE) - VERSI SUDAH DIPERBAIKI */
+/* ================================================= */
+
 @media (max-width: 1024px) {
     .slider-btn { display: none; }
 }
 
 @media (max-width: 768px) {
+    /* --- Penyesuaian Umum untuk Tablet & Mobile --- */
     .hero-slider { height: 60vh; aspect-ratio: unset; }
-    
-    .slide-content { bottom: 45px; width: 90%; }
-    .p-desktop { display: none; }
-    .p-mobile { display: block; }
     .slide-content h1 { font-size: 1.8em; }
     .slide-content p { font-size: 0.8em; }
-    
+    .p-desktop { display: none; }
+    .p-mobile { display: block; }
     .navbar .logo { font-size: 32px; }
-    
-    .section-title { padding: 30px 15px 15px; }
-    .section-title h2 { font-size: 22px; }
-
     .menu-grid {
         grid-template-columns: repeat(2, 1fr);
-        padding: 0 20px; /* DIUBAH: Jarak pinggir diperbesar di mobile */
-        gap: 20px;       /* DIUBAH: Jarak antar kotak diperbesar di mobile */
-        margin-top: 0;
-        margin-bottom: 20px;
-    }
-/* Aturan untuk bagian baru di mobile */
-.music-section, .instagram-section {
-    padding-left: 15px;
-    padding-right: 15px;
-}
-    .grid-item-label {
-        font-size: 0.9em;
-        padding: 15px 15px 10px; /* DIUBAH: Posisi tulisan diturunkan di mobile */
-    }
-    @media (max-width: 768px) {
-    /* Aturan-aturan lain yang sudah ada di sini... */
-    .hero-slider { height: 60vh; aspect-ratio: unset; }
-    .menu-grid {
-        grid-template-columns: repeat(2, 1fr);
-        /* ...dan seterusnya... */
     }
 
-
-    /* ======================================================= */
-    /* <-- TAMBAHKAN DUA ATURAN BARU DI BAWAH INI --> */
-    /* ======================================================= */
-
-    .instagram-section .card-eyebrow {
-        font-size: 1.6em; /* Dikecilkan dari ukuran desktop (2em) */
-    }
-
-    .instagram-handle {
-        font-size: 1.2em; /* Dikecilkan dari ukuran desktop (1.5em) */
-        margin-bottom: 20px; /* Jarak bawah juga bisa disesuaikan untuk mobile */
-    }
-    
-    @media (max-width: 768px) {
-    /* ======================================================= */
-    /* <-- TAMBAHKAN SEMUA ATURAN BARU DI BAWAH INI -->      */
-    /* ======================================================= */
-
-    /* --- Penyesuaian untuk Bagian Musik --- */
-
-    /* 1. Ukuran judul "MUSIC" dikecilkan di mobile */
+    /* --- Penyesuaian untuk Bagian Musik di Mobile --- */
     .music-section .card-eyebrow {
-        font-size: 2.2em; 
+        font-size: 2.2em; /* Judul "MUSIC" dikecilkan */
     }
-
-    /* 2. Ini membuat konten di dalam kartu musik (kotak hitam & tombol) menjadi responsif */
-    /* dan tidak keluar dari layar mobile. */
     .spotify-profile-embed,
     .music-link {
-        max-width: 100%; /* Lebarnya tidak lagi fix, tapi mengikuti lebar kartu */
+        max-width: 100%; /* Konten di dalam kartu musik dibuat responsif */
     }
 
-
-    /* --- Penyesuaian untuk Bagian Instagram --- */
-    
-    /* 3. Ukuran judul "Follow Me On Instagram" dikecilkan */
+    /* --- Penyesuaian untuk Bagian Instagram di Mobile --- */
     .instagram-section .card-eyebrow {
-        font-size: 1.6em;
-        padding-left: 0; /* Dibuat rata kiri agar rapi di mobile */
+        font-size: 1.6em; /* Judul "Follow me" dikecilkan */
+        padding-left: 0;
     }
-
-    /* 4. Ukuran handle "@mhaafizz" dikecilkan */
     .instagram-handle {
-        font-size: 1.2em;
-        padding-left: 0; /* Dibuat rata kiri agar sejajar di mobile */
+        font-size: 1.2em; /* Tulisan "@mhaafizz" dikecilkan */
+        padding-left: 0;
+        margin-top: 5px;
     }
-
-} /* <-- Ini adalah kurung kurawal penutup dari @media */
-
-} /* <-- Ini adalah kurung kurawal penutup dari @media */
-
 }
 
 @media (max-width: 480px) {
+    /* --- Penyesuaian Tambahan untuk Layar HP Kecil --- */
     .slide-content h1 { font-size: 1.5em; }
     .slide-content p { font-size: 0.75em; }
     .navbar .logo { font-size: 28px; }
-    .section-title h2 { font-size: 20px; }
+
+    /* Ukuran Judul Section lebih kecil lagi di HP */
+    .music-section .card-eyebrow { font-size: 1.8em; }
+    .instagram-section .card-eyebrow { font-size: 1.4em; }
+    .instagram-handle { font-size: 1em; }
 }
