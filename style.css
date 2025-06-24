@@ -198,18 +198,26 @@ ul {
     text-align: center;
 }
 
-/* Section Title (Hair to Toe) */
+/* GANTIKAN SEMUA KODE LAMA ANDA UNTUK .section-title DENGAN INI */
+
 .section-title {
     text-align: left;
-    padding: 40px 20px 20px;
+    padding: 100px 20px 20px;
+    color: #000; /* <- INI YANG MEMBUAT SEMUA TULISAN JADI HITAM PEKAT */
 }
 
 .section-title h2 {
-    font-size: 25px;
-    color: #333;
+    font-size: 40px;
+    font-weight: 750;
     margin: 0;
+    /* Pastikan tidak ada properti 'color' di sini agar warnanya mengikuti wadah utama */
 }
 
+.section-title p {
+    font-weight: 800;
+    font-size: 2em;
+    margin-top: 5px;
+}
 /* Galeri Menu Foto */
 .menu-grid {
     display: grid;
@@ -325,7 +333,7 @@ ul {
 
 /* Kode yang Sudah Diperbarui */
 .card-eyebrow {
-    font-size: 4em; /* DIUBAH: Ukuran font kembali normal */
+    font-size: 2,5em; /* DIUBAH: Ukuran font kembali normal */
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 2px;
@@ -419,72 +427,97 @@ ul {
 .spotify-link { background-color: #1DB954; }
 .apple-link { background-color: #fa233b; }
 
-/* Bagian Instagram */
-.instagram-section {
-    padding: 0 20px 40px;
-}
 
-.instagram-handle {
-    text-align: center;
-    font-size: 1.5em;
-    margin-top: -15px;
-    margin-bottom: 20px;
-}
-
-.instagram-screenshot {
-    max-width: 400px;
-    margin: 0 auto;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-    border-radius: 12px;
-    overflow: hidden;
-}
-.instagram-screenshot img {
-    width: 100%;
-    display: block;
-}
-/* ======================================= */
-/* ATURAN RESPONSIVE (MOBILE)              */
-/* ======================================= */
-
-@media (max-width: 1024px) {
-    .slider-btn { display: none; }
-}
-
-@media (max-width: 768px) {
-    .hero-slider { height: 60vh; aspect-ratio: unset; }
-    
-    .slide-content { bottom: 45px; width: 90%; }
-    .p-desktop { display: none; }
-    .p-mobile { display: block; }
-    .slide-content h1 { font-size: 1.8em; }
-    .slide-content p { font-size: 0.8em; }
-    
-    .navbar .logo { font-size: 32px; }
-    
-    .section-title { padding: 30px 15px 15px; }
-    .section-title h2 { font-size: 22px; }
-
-    .menu-grid {
-        grid-template-columns: repeat(2, 1fr);
-        padding: 0 20px; /* DIUBAH: Jarak pinggir diperbesar di mobile */
-        gap: 20px;       /* DIUBAH: Jarak antar kotak diperbesar di mobile */
-        margin-top: 0;
-        margin-bottom: 20px;
-    }
-/* Aturan untuk bagian baru di mobile */
-.music-section, .instagram-section {
-    padding-left: 15px;
-    padding-right: 15px;
-}
-    .grid-item-label {
-        font-size: 0.9em;
-        padding: 15px 15px 10px; /* DIUBAH: Posisi tulisan diturunkan di mobile */
-    }
-}
 
 @media (max-width: 480px) {
     .slide-content h1 { font-size: 1.5em; }
     .slide-content p { font-size: 0.75em; }
     .navbar .logo { font-size: 28px; }
     .section-title h2 { font-size: 20px; }
+}
+/* KODE BARU */
+.section-title {
+    text-align: left;
+    padding: 0 20px 20px;
+    color: #000000; /* Menambahkan warna hitam untuk semua teks di dalamnya */
+}
+.section-divider {
+    border: none;
+    height: 5px;
+    background-color: #000000;
+    width: 1250px;
+    /* DIUBAH: Jarak atas 60px, jarak bawah diperkecil jadi 30px */
+     margin: 10px auto 10px;
+}
+/* Mengatur font dasar jika belum ada */
+body {
+    font-family: sans-serif;
+    background-color: #ffffff; /* Ganti dengan warna latar belakang websitemu */
+    color: #000000; /* Ganti dengan warna teks websitemu */
+}
+
+/* ======================================= */
+/* GAYA UNTUK SEKSI FOLLOW INSTAGRAM       */
+/* ======================================= */
+
+.instagram-content-wrapper {
+    padding: 0px 20px 20px; /* Jarak atas dibuat 0 karena sudah diatur oleh judul */
+    max-width: 900px;
+    margin: 0 auto;
+}
+
+.instagram-title h2 {
+    font-size: 1.2rem;
+    letter-spacing: 2px;
+    font-weight: normal;
+    margin-bottom: 5px;
+}
+
+
+.instagram-content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 30px;
+}
+
+/* ... (sisa kode CSS untuk seksi Instagram biarkan seperti semula) ... */
+/* Style untuk gambar instagram */
+.instagram-link img {
+    display: block; /* Menghilangkan spasi ekstra di bawah gambar */
+    max-width: 320px; /* Lebar maksimum gambar */
+    width: 100%; /* Membuat gambar responsif, menyesuaikan lebar wadah */
+    border-radius: 12px; /* Sudut sedikit melengkung */
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1); /* Memberi efek bayangan halus */
+    transition: transform 0.3s ease; /* Animasi saat kursor di atasnya */
+}
+
+/* Efek hover pada gambar untuk desktop */
+.instagram-link:hover img {
+    transform: scale(1.03); /* Sedikit membesar saat kursor di atasnya */
+}
+
+
+/* --- TAMPILAN MOBILE (Layar di bawah 768px) --- */
+
+/* Sembunyikan tulisan "Sentuh gambar disamping" di mobile */
+.desktop-instruction {
+    display: none;
+}
+
+
+/* --- TAMPILAN DESKTOP/KOMPUTER (Layar 768px ke atas) --- */
+
+@media (min-width: 768px) {
+    /* Tampilkan kembali tulisan "Sentuh gambar disamping" */
+    .desktop-instruction {
+        display: block; /* Menampilkannya sebagai blok */
+        width: 200px;   /* Beri lebar agar tidak terlalu mepet */
+    }
+
+    .desktop-instruction p {
+        font-size: 1.1rem;
+        color: #555; /* Warna sedikit abu-abu agar tidak terlalu mencolok */
+        font-style: italic;
+    }
 }
