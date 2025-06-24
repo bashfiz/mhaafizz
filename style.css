@@ -488,8 +488,8 @@ ul {
         font-size: 2em; /* Judul "MUSIC" dikecilkan */
     }
     .music-card {
-        width: 90%; /* Lebar kartu dibuat 90% agar tidak penuh */
-        padding: 16px; /* Jarak di dalam kartu dikecilkan */
+        width: 70%; /* Lebar kartu dibuat 90% agar tidak penuh */
+        padding: 15px; /* Jarak di dalam kartu dikecilkan */
     }
     /* Konten di dalam kartu musik dibuat responsif */
     .spotify-profile-embed,
@@ -499,12 +499,12 @@ ul {
 
     /* --- PENYESUAIAN TEKS INSTAGRAM DI MOBILE --- */
     .instagram-section .card-eyebrow {
-        font-size: 1.8em; /* Judul "Follow me" dikecilkan */
-        padding-left: 0;
+        font-size: 1.4em; /* Judul "Follow me" dikecilkan */
+        padding-left: 50;
     }
     .instagram-handle {
         font-size: 1.4em; /* Tulisan "@mhaafizz" dikecilkan */
-        padding-left: 0;
+        padding-left: 50;
         margin-top: 0px;
     }
 }
