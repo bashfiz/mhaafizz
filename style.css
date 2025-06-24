@@ -302,17 +302,58 @@ ul {
     padding: 40px 20px;
 }
 
+/* ======================================= */
+/* GAYA FINAL BAGIAN MUSIK               */
+/* ======================================= */
+
+/* Bagian pembungkus utama */
+.music-section {
+    padding: 40px 20px;
+}
+
+/* KARTU LUAR (KOTAK OUTLINE) */
 .music-card {
-    max-width: 480px;
+    max-width: 600px; /* DIUBAH: Wadah luar dibuat jauh lebih lebar */
     margin: 0 auto;
-    background-color: #fff;
+    background-color: #f8ffce;
     border: 1px solid #e0e0e0;
     border-radius: 16px;
-    padding: 24px;
+    padding: 15px 24px 24px; 
     box-shadow: 0 4px 15px rgba(0,0,0,0.05);
     text-align: center;
 }
 
+/* Kode yang Sudah Diperbarui */
+.card-eyebrow {
+    font-size: 2,5em; /* DIUBAH: Ukuran font kembali normal */
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #000000;
+    margin: -10px 0 20px;
+    text-align: center;
+}
+/* Judul "Dengarkan Lebih Banyak..." */
+.music-card .card-main-title {
+    font-size: 1.2em;
+    font-weight: bold;
+    margin: 24px 0 16px;
+}
+
+
+/* --- INI BAGIAN KUNCINYA --- */
+/* KITA BERI BATAS LEBAR UNTUK KONTEN DI DALAM KARTU */
+.spotify-profile-embed,
+.music-link {
+    max-width: 360px; /* Batasi lebar konten agar tidak meregang */
+    margin-left: auto;   /* Trik untuk menengahkan konten */
+    margin-right: auto;  /* Trik untuk menengahkan konten */
+    box-sizing: border-box;
+}
+/* ------------------------- */
+
+
+/* Tampilan Profil Spotify Embed */
 .spotify-profile-embed {
     background-color: #191414;
     color: white;
@@ -335,21 +376,13 @@ ul {
 
 .sp-user {
     text-align: left;
-    flex-grow: 1; /* Membuatnya mengambil sisa ruang */
-}
-.sp-user span {
-    font-weight: bold;
-}
-.sp-user p {
-    margin: 4px 0 0;
-    font-size: 0.9em;
-    color: #b3b3b3;
+    flex-grow: 1;
 }
 
-.sp-logo {
-    font-size: 28px;
-    color: #1DB954;
-}
+.sp-user span { font-weight: bold; }
+.sp-user p { margin: 4px 0 0; font-size: 0.9em; color: #b3b3b3; }
+
+.sp-logo { font-size: 28px; color: #1DB954; }
 
 .sp-discover-btn {
     display: inline-block;
@@ -363,16 +396,10 @@ ul {
     margin-top: 20px;
     transition: background-color 0.2s ease;
 }
-.sp-discover-btn:hover {
-    background-color: #333;
-}
+.sp-discover-btn:hover { background-color: #333; }
 
-.music-card .card-main-title {
-    font-size: 1.2em;
-    font-weight: bold;
-    margin: 24px 0 16px;
-}
 
+/* Tombol Link Spotify & Apple Music */
 .music-link {
     display: flex;
     align-items: center;
@@ -386,85 +413,25 @@ ul {
     margin-top: 10px;
     transition: opacity 0.2s ease;
 }
-.music-link:hover {
-    opacity: 0.9;
-}
-.music-link i {
-    font-size: 1.2em;
-}
-.spotify-link {
-    background-color: #1DB954;
-}
-.apple-link {
-    background-color: #fa233b;
-}
+.music-link:hover { opacity: 0.9; }
+.music-link i { font-size: 1.2em; }
 
-/* Bagian Instagram */
-.instagram-section {
-    padding: 0 20px 40px;
-}
+.spotify-link { background-color: #1DB954; }
+.apple-link { background-color: #fa233b; }
 
-.instagram-handle {
-    text-align: center;
-    font-size: 1.5em;
-    margin-top: -15px;
-    margin-bottom: 20px;
-}
 
-.instagram-screenshot {
-    max-width: 400px;
-    margin: 0 auto;
-    box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-    border-radius: 12px;
-    overflow: hidden;
-}
-.instagram-screenshot img {
-    width: 100%;
-    display: block;
-}
-/* ======================================= */
-/* ATURAN RESPONSIVE (MOBILE)              */
-/* ======================================= */
-
-@media (max-width: 1024px) {
-    .slider-btn { display: none; }
-}
-
-@media (max-width: 768px) {
-    .hero-slider { height: 60vh; aspect-ratio: unset; }
-    
-    .slide-content { bottom: 45px; width: 90%; }
-    .p-desktop { display: none; }
-    .p-mobile { display: block; }
-    .slide-content h1 { font-size: 1.8em; }
-    .slide-content p { font-size: 0.8em; }
-    
-    .navbar .logo { font-size: 32px; }
-    
-    .section-title { padding: 30px 15px 15px; }
-    .section-title h2 { font-size: 22px; }
-
-    .menu-grid {
-        grid-template-columns: repeat(2, 1fr);
-        padding: 0 20px; /* DIUBAH: Jarak pinggir diperbesar di mobile */
-        gap: 20px;       /* DIUBAH: Jarak antar kotak diperbesar di mobile */
-        margin-top: 0;
-        margin-bottom: 20px;
-    }
-/* Aturan untuk bagian baru di mobile */
-.music-section, .instagram-section {
-    padding-left: 15px;
-    padding-right: 15px;
-}
-    .grid-item-label {
-        font-size: 0.9em;
-        padding: 15px 15px 10px; /* DIUBAH: Posisi tulisan diturunkan di mobile */
-    }
-}
 
 @media (max-width: 480px) {
     .slide-content h1 { font-size: 1.5em; }
     .slide-content p { font-size: 0.75em; }
     .navbar .logo { font-size: 28px; }
     .section-title h2 { font-size: 20px; }
+}
+.section-divider {
+    border: none;
+    height: 5px;
+    background-color: #000;
+    width: 1250px;
+    /* DIUBAH: Jarak atas 60px, jarak bawah diperkecil jadi 30px */
+    margin: 10px auto 30px; 
 }
