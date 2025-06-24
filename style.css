@@ -34,7 +34,6 @@ ul {
     align-items: center;
     padding: 15px 20px;
     background-color: #fff;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
     position: sticky;
     top: 0;
     z-index: 1000;
@@ -286,34 +285,56 @@ ul {
 /* GAYA UNTUK BAGIAN MUSIK & INSTAGRAM   */
 /* ======================================= */
 
-/* Kode yang Sudah Diperbarui */
-.card-eyebrow {
-    font-size: 4em; /* DIUBAH: Diperbesar sedikit */
-    font-weight: 700; /* DIUBAH: Ditegaskan lagi agar tebal (nilai angka untuk bold) */
+/* Aturan untuk judul di bagian Musik */
+.music-section .card-eyebrow {
+    text-align: center;
+    font-size: 3em;
+    font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 2px;
-    color: #888;
+    color: #000; /* <-- Warna diubah menjadi hitam */
+    margin-top: -10px;
     margin-bottom: 20px;
-    text-align: center;
 }
-
 /* Bagian Musik */
 .music-section {
-    padding: 40px 20px;
+    position: relative; /* <-- INI YANG PALING PENTING & SEBELUMNYA HILANG */
+    padding: 70px 20px 70px; /* Jarak atas, samping, dan bawah. Angka ke-3 (40px) adalah jarak dari kartu ke garis. */
 }
+/* Tambahkan blok kode baru ini */
+.music-section::after {
+    content: ''; /* Wajib ada untuk pseudo-element */
+    position: absolute;
+    bottom: 0; /* Posisikan garis di paling bawah section */
+    left: 50%;
+    transform: translateX(-50%); /* Trik untuk membuat elemen di tengah */
 
+    /* --- ATUR PANJANG DAN TEBAL DI SINI --- */
+    width: 90%;  /* <-- UBAH NILAI INI UNTUK MENGATUR PANJANG (misal 80% atau 95%) */
+    height: 5px; /* Tebal garis */
+    /* ------------------------------------- */
+    
+    background-color: #000; /* Warna garis */
+}
 .music-card {
-    max-width: 480px;
+    max-width: 550px; /* <-- HANYA UBAH ANGKA INI. Contohnya dilebarkan menjadi 550px */
+    
+    /* Properti di bawah ini tetap sama seperti yang Anda mau */
     margin: 0 auto;
-    background-color: #fff;
+    background-color: #ffffff;
     border: 1px solid #e0e0e0;
     border-radius: 16px;
     padding: 24px;
-    box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+    box-shadow: 0 4px 8px rgba(0,0,0,0.05);
     text-align: center;
 }
 
 .spotify-profile-embed {
+    max-width: 420px;   /* <-- Diberi lebar tetap agar TIDAK ikut melebar */
+    margin-left: auto;  /* <-- Dua baris ini membuatnya tetap di tengah */
+    margin-right: auto; /* <-- */
+
+    /* Properti lain biarkan saja */
     background-color: #191414;
     color: white;
     border-radius: 12px;
@@ -374,6 +395,11 @@ ul {
 }
 
 .music-link {
+    max-width: 420px;    /* <-- Diberi lebar tetap agar TIDAK ikut melebar */
+    margin-left: auto;   /* <-- Dua baris ini membuatnya tetap di tengah */
+    margin-right: auto;  /* <-- */
+
+    /* Properti lain biarkan saja */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -400,17 +426,28 @@ ul {
 }
 
 /* Bagian Instagram */
-.instagram-section {
-    padding: 0 20px 40px;
+.instagram-section .card-eyebrow {
+    text-align: left;
+    font-size: 2.5em;
+    font-weight: 700; /* Ini sudah BOLD */
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    color: #000; /* <-- Diubah menjadi hitam pekat */
+    margin-bottom: 0;
+    padding-left: 60px;
 }
+/* GANTI .instagram-handle DENGAN INI */
 
 .instagram-handle {
-    text-align: center;
-    font-size: 1.5em;
+    text-align: left;
+    font-size: 2em;
+    font-weight: bold;
+    font-family: 'Poppins', sans-serif;
     margin-top: -15px;
-    margin-bottom: 20px;
+    margin-bottom: 25px;
+    color: #000;
+    padding-left: 55px; /* <-- DIUBAH menjadi 0 agar sejajar */
 }
-
 .instagram-screenshot {
     max-width: 400px;
     margin: 0 auto;
